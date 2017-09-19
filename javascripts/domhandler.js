@@ -14,4 +14,4 @@ const writeToDom = (messagesArr) => {
     messageDiv.innerHTML = domString; 
 };
 
-module.exports = writeToDom; 
+module.exports = writeToDom;
