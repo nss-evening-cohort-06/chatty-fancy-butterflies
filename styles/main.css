@@ -1,3 +1,23 @@
 body {
 	background-color: purple;
 }
+
+.navbar-center
+{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    margin: 7px auto ;
+}
+
+input[type=text] {
+    width: 400px !important;
+}
+
+#img-old-man {
+	position: fixed;
+	left: 5px;
+	top: 7px;
+	width: 40px;
+	height: 40px;
+}
