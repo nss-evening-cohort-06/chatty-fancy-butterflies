@@ -1,3 +1,10 @@
 "use strict";
 
-console.log("I'm a dirty daddy");
+
+
+
+
+
+
+const getNewMessage = require('./events');
+getNewMessage();
