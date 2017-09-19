@@ -6,9 +6,9 @@ const writeToDom = (messagesArr) => {
     let domString = "";
     messagesArr.forEach((message) => {
         domString += 
-            `<div class="message-container" id="message-${message.id}">
-                <div class="message-text">${message.text}</div>
-                <div class="message-btn"><button class="delete-btn-${message.id}"></button></div>
+            `<div class="message row" id="message-${message.id}">
+                <div class="message-text col-md-9">${message.text}</div>
+                <div class="message-btn col-md-3"><button class="delete-btn-${message.id}">Delete</button></div>
             </div>`;
     });
     messageDiv.innerHTML = domString; 

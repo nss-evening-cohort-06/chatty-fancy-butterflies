@@ -12,7 +12,7 @@ const logError = () => {
 
 //parses JSON data into an array and calls the print to dom function -- runs when the JSON file is loaded 
 const whenMessagesLoad = function () {
-    messagesArr = JSON.parse(this.responseText).messages;
+    initialMessages = JSON.parse(this.responseText).messages;
     printToDom(initialMessages);
 };
 
@@ -23,7 +23,7 @@ const initializer = () => {
 
 //getter for array containing messages in the json file 
 const getInitialMessages = () => {
-    return messagesArr;
+    return initialMessages;
   };
 
 module.exports = {
