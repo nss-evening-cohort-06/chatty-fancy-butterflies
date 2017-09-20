@@ -2,16 +2,18 @@
 
 const getMessage = require('./messages');
 const data = require('./data');
+const writeToDom = require('./domhandler');
 
 const getNewMessage = () => {
     let messageInput = document.getElementById('messageInput');
     messageInput.addEventListener('keypress', (e) => {
-        console.log(e);
         if (e.keyCode === 13) {
             e.preventDefault();
             console.log('enter', e);
             getMessage(e, data.getMessages());
             document.getElementById("messageInput").value = "";  
+            getMessage(e, data.getMessages());  
+
         }  
     });    
 };
@@ -44,4 +46,20 @@ const toggleControls = () => {
     });
 };
 
-module.exports = {getNewMessage, toggleControls};
+const deleteButton = () => {
+    document.getElementById("messagediv").addEventListener("click", (event) => {
+        if (event.target.classList.contains("delete-button")) {
+            let id = parseInt(event.target.id.split("-")[2]);
+            let messages = data.getMessages();
+                messages.forEach((message, index) => {
+                    if (id === message.id) {
+                        messages.splice(index, 1);
+                    }
+                });
+            writeToDom(messages);
+            data.updateMessages(messages);
+        }
+    });
+};
+
+module.exports = {getNewMessage, toggleControls, deleteButton};

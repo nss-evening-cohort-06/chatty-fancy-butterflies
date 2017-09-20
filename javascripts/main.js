@@ -10,5 +10,4 @@ data.initializer();
 events.toggleControls();
 clear.addClearFxn();
 
-
-//console.log(moment().format('llll'));
+events.deleteButton();

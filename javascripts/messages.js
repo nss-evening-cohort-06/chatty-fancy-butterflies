@@ -9,7 +9,7 @@ const getMessage = (e, messages) => {
     let id = messages.length + 1;       
     let newMessage = document.getElementById('messageInput').value;
     let messageValue = {
-        "id": `${id}`,
+        "id": id,
         "text": `${newMessage}`,
         "userId": 1,
         "createdDate": timeStamp()
