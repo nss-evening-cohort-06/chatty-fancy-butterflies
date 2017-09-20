@@ -2,7 +2,7 @@
 
 const getMessage = require('./messages');
 const data = require('./data');
-const writeToDom = require('./domhandler');
+const dom = require('./domhandler');
 
 const getNewMessage = () => {
     let messageInput = document.getElementById('messageInput');
@@ -52,7 +52,7 @@ const deleteButton = () => {
                         messages.splice(index, 1);
                     }
                 });
-            writeToDom(messages);
+            dom.writeToDom(messages);
             data.updateMessages(messages);
         }
     });

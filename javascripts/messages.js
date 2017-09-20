@@ -1,7 +1,7 @@
 'use strict';
 
 const data = require('./data');
-const printToDom = require('./domhandler');
+const dom = require('./domhandler');
 
 const getMessage = (e, messages) => {
     let id = messages.length + 1;       
@@ -13,7 +13,7 @@ const getMessage = (e, messages) => {
         "createdDate": null
     };
     messages.push(messageValue);
-    printToDom(messages);
+    dom.writeToDom(messages);
     data.updateMessages(messages);
 };
 

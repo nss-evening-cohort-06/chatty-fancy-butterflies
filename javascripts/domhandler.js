@@ -14,4 +14,18 @@ const writeToDom = (messagesArr) => {
     messageDiv.innerHTML = domString; 
 };
 
-module.exports = writeToDom;
+const populateUserOptions = (userObj) => {
+    let users = userObj.names;
+    let userDropdown = document.getElementById("user-dropdown");
+    let userListItems = "";
+    users.forEach((name) => {
+        userListItems += `<li id="${name}"><a href=#>${name}</a></li>`;
+    });
+    userDropdown.innerHTML = userListItems; 
+};
+
+
+module.exports = {
+    writeToDom,
+    populateUserOptions
+};
