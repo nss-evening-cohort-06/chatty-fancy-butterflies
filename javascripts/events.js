@@ -10,7 +10,8 @@ const getNewMessage = () => {
         if (e.keyCode === 13) {
             e.preventDefault();
             console.log('enter', e);
-            getMessage(e, data.getMessages());  
+            getMessage(e, data.getMessages());
+            document.getElementById("messageInput").value = "";  
         }  
     });    
 };
