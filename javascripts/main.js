@@ -6,6 +6,7 @@ const events = require("./events.js");
 console.log("I'm a dirty daddy");
 
 data.initializer();
-events();
+events.toggleControls();
+events.deleteButton();
 
 

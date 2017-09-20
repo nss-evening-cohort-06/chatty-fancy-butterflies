@@ -20,17 +20,24 @@ const makeTextBigger = (event) => {
 
 const toggleControls = () => {
     document.getElementById("selectordiv").addEventListener("change", (event)=> {
-        // console.log(event);
         if (event.target.id === "dark") {
-            // console.log("darker");
             makeTextDarker(event);
         } else if (event.target.id === "bigger") {
-            // console.log("bigger");
             makeTextBigger(event);
         }
     });
 };
 
-module.exports = toggleControls;
+const deleteButton = () => {
+    document.getElementById("messagediv").addEventListener("click", (event) => {
+        if (event.target.classList.contains("delete-button")) {
+            let id = event.target.id.split("-");
+                id = id[2];
+            
+        }
+    });
+};
+
+module.exports = {toggleControls, deleteButton};
 
 
