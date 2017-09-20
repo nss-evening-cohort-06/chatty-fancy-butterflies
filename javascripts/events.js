@@ -47,7 +47,6 @@ const deleteButton = () => {
         if (event.target.classList.contains("delete-button")) {
             let id = parseInt(event.target.id.split("-")[2]);
             let messages = data.getMessages();
-            console.log(messages);
                 messages.forEach((message, index) => {
                     if (id === message.id) {
                         messages.splice(index, 1);
