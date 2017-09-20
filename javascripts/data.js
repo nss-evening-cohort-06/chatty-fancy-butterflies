@@ -3,7 +3,7 @@
 const printToDom = require("./domhandler");
 const loadMessages = require("./xhr");
 
-let initialMessages = [];
+let messages = [];
 
 //throws error if error on JSON load
 const logError = () => {
@@ -12,8 +12,8 @@ const logError = () => {
 
 //parses JSON data into an array and calls the print to dom function -- runs when the JSON file is loaded 
 const whenMessagesLoad = function () {
-    initialMessages = JSON.parse(this.responseText).messages;
-    printToDom(initialMessages);
+    messages = JSON.parse(this.responseText).messages;
+    printToDom(messages);
 };
 
 //initializer kicks off the XHR --called on main.js
@@ -23,10 +23,15 @@ const initializer = () => {
 
 //getter for array containing messages in the json file 
 const getInitialMessages = () => {
-    return initialMessages;
+    return messages;
   };
+
+const storeMessage = (messageObj) => {
+    messages.push(messageObj); 
+};
 
 module.exports = {
     initializer,
-    getInitialMessages
+    getInitialMessages,
+    storeMessage
 };
