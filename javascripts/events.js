@@ -1,18 +1,18 @@
 'use strict';
 
 const getMessage = require('./messages');
-const xhrRequest = require('./xhr');
+const initialMessages = require('./data');
 
-let getNewMessage = () => {
+const getNewMessage = () => {
     let messageInput = document.getElementById('messageInput');
     messageInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
-            getMessage(e, xhrRequest);
+            getMessage(e, initialMessages.getInitialMessages());
         }
     });
 };
 
-let deleteMessage = () => {
+const deleteMessage = () => {
     
 };
 

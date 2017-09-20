@@ -1,13 +1,27 @@
 'use strict';
 
-const getMessage = (e, objectArray) => {
-    let messageArray = [];
-    messageArray = objectArray;         
-    let messageValue = document.getElementById('messageInput').value;
+const data = require('./data');
+const writeToDom = require('./domhandler');
+
+data.storeMessage(obj);
+
+
+const getMessage = (e, messages) => {
+    let id = messages.length + 1;
+    console.log(id); 
+    console.log('message array with only initial messages:',messages);         
     if (e.key === 'Enter') {
-        messageArray.push(messageValue);
+        let newMessage = document.getElementById('messageInput').value;
+        let messageValue = {
+            "id": `${id}`,
+            "text": `${newMessage}`,
+            "userId": 1,
+            "createdDate": null
+        };
+        messages.push(messageValue);
+        console.log('message array with new message:',messages);
+        writeToDom(messages);
     }
-    return messageArray;
 };
 
 module.exports = getMessage;
