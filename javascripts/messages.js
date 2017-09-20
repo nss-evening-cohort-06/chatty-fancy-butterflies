@@ -3,6 +3,12 @@
 const data = require('./data');
 const printToDom = require('./domhandler');
 
+// const timeStamp = () => {
+//     let dt = new Date();
+//     let utcDate = dt.toLocaleString(["America/Chicago"]);
+//     return utcDate;
+// };
+
 const getMessage = (e, messages) => {
     let id = messages.length + 1;       
     let newMessage = document.getElementById('messageInput').value;
@@ -10,7 +16,7 @@ const getMessage = (e, messages) => {
         "id": `${id}`,
         "text": `${newMessage}`,
         "userId": 1,
-        "createdDate": null
+        "timeStamp": null//timeStamp()
     };
     messages.push(messageValue);
     printToDom(messages);

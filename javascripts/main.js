@@ -8,6 +8,3 @@ events.getNewMessage();
 data.initializer();
 events.toggleControls();
 events.deleteButton();
-
-
-
