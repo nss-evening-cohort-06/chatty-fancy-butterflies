@@ -1,5 +1,7 @@
 'use strict';
 
+const timeStamp = require('./timeStamp.js');
+
 const data = require('./data');
 const dom = require('./domhandler');
 const users = require('./users');
@@ -11,7 +13,7 @@ const getMessage = (e, messages) => {
         "id": id,
         "text": `${newMessage}`,
         "userName": `${users.getCurrentUser()}`,
-        "createdDate": null
+        "createdDate": timeStamp()
     };
     messages.push(messageValue);
     dom.writeToDom(messages);
