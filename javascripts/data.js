@@ -28,6 +28,7 @@ const getMessages = () => {
 
 const updateMessages = (messageArray) => {
     messages = messageArray; 
+    console.log(messages);
 };
 
 module.exports = {

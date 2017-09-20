@@ -6,7 +6,7 @@ const data = require('./data');
 const getNewMessage = () => {
     let messageInput = document.getElementById('messageInput');
     messageInput.addEventListener('keypress', (e) => {
-        console.log(e);
+        // console.log(e);
         if (e.keyCode === 13) {
             e.preventDefault();
             console.log('enter', e);
