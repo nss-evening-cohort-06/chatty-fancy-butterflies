@@ -2,9 +2,11 @@
 
 const makeTextDarker = (event) => {
     if (event.target.checked === true) {
+        event.target.parentNode.nextElementSibling.classList.remove("messages");
         event.target.parentNode.nextElementSibling.classList.add("makeTextDark");
     } else if (event.target.checked === false) {
         event.target.parentNode.nextElementSibling.classList.remove("makeTextDark");
+        event.target.parentNode.nextElementSibling.classList.add("messages");
     }
 };
 
