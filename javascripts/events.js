@@ -3,6 +3,7 @@
 const getMessage = require('./messages');
 const data = require('./data');
 const dom = require('./domhandler');
+const users = require('./users');
 
 const getNewMessage = () => {
     let messageInput = document.getElementById('messageInput');
@@ -58,4 +59,21 @@ const deleteButton = () => {
     });
 };
 
-module.exports = {getNewMessage, toggleControls, deleteButton};
+//gets the selected user from the user dropdown, updates the text for the dropdown, and sets the current user in user.js
+const userSelection = () => {
+    const userDropdownToggle = document.getElementById("user-dropdown-toggle");
+    document.getElementById("user-dropdown-menu").addEventListener("click", (e) => {
+        let userName = e.target.innerText; 
+        if (e.target.id !== "user-dropdown-menu"){ //makes sure below only fires when a user <li> is selected
+            userDropdownToggle.innerHTML = `Hello, ${userName}! <span class="caret"></span>`;
+            users.setCurrentUser(userName); 
+        }         
+    });
+};
+
+module.exports = {
+    getNewMessage, 
+    toggleControls, 
+    deleteButton,
+    userSelection
+};

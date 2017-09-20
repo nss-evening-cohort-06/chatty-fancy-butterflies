@@ -2,6 +2,7 @@
 
 const data = require('./data');
 const dom = require('./domhandler');
+const users = require('./users');
 
 const getMessage = (e, messages) => {
     let id = messages.length + 1;       
@@ -9,7 +10,7 @@ const getMessage = (e, messages) => {
     let messageValue = {
         "id": id,
         "text": `${newMessage}`,
-        "userId": 1,
+        "userName": `${users.getCurrentUser()}`,
         "createdDate": null
     };
     messages.push(messageValue);

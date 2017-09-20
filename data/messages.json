@@ -3,31 +3,31 @@
 		{
 			"id": 1,
 			"text": "Oh yeah, you really told him, didn't you?",
-            "userId": 1,
+            "userName": "",
             "createdDate": null 
 		},
 		{
 			"id": 2,
 			"text": "We can't. I'm your boss.",
-            "userId": 1,
+            "userName": "",
             "createdDate": null 
         },
         {
 			"id": 3,
 			"text": "If you leave now, you get nothing.",
-            "userId": 1,
+            "userName": "",
             "createdDate": null
         },
         {
 			"id": 4,
 			"text": "There's someone in the house!",
-            "userId": 1,
+            "userName": "",
             "createdDate": null
         },
         {
 			"id": 5,
 			"text": "No! I'm tired of doing what you say.",
-            "userId": 1,
+            "userName": "",
             "createdDate": null 
         }
         

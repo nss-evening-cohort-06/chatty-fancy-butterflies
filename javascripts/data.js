@@ -20,7 +20,7 @@ const whenMessagesLoad = function () {
 //initializer kicks off the XHR --called on main.js
 const initializer = () => {
   loadMessages(whenMessagesLoad, logError);
-  dom.populateUserOptions(users);
+  dom.populateUserOptions(users.getUsers());
 };
 
 //getter for array containing messages in the json file 

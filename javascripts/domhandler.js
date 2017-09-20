@@ -7,21 +7,24 @@ const writeToDom = (messagesArr) => {
     messagesArr.forEach((message) => {
         domString += 
             `<div class="message row" id="message-${message.id}">
-                <div class="message-text col-md-9">${message.text}</div>
+                <div class="message-text col-md-9">${message.text}
+                   <p>${message.userName}</p>
+                </div>
                 <div class="message-btn col-md-3"><button class="delete-button btn btn-danger" id="delete-btn-${message.id}">Delete</button></div>
             </div>`;
     });
     messageDiv.innerHTML = domString; 
 };
 
+//takes the user object and populates the name in the user dropdown -- is called in data.intializer 
 const populateUserOptions = (userObj) => {
     let users = userObj.names;
-    let userDropdown = document.getElementById("user-dropdown");
+    let userDropdownMenu = document.getElementById("user-dropdown-menu");
     let userListItems = "";
     users.forEach((name) => {
         userListItems += `<li id="${name}"><a href=#>${name}</a></li>`;
     });
-    userDropdown.innerHTML = userListItems; 
+    userDropdownMenu.innerHTML = userListItems; 
 };
 
 
