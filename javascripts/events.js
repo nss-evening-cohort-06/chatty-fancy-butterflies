@@ -1,4 +1,19 @@
-"use strict";
+'use strict';
+
+const getMessage = require('./messages');
+const data = require('./data');
+
+const getNewMessage = () => {
+    let messageInput = document.getElementById('messageInput');
+    messageInput.addEventListener('keypress', (e) => {
+        console.log(e);
+        if (e.keyCode === 13) {
+            e.preventDefault();
+            console.log('enter', e);
+            getMessage(e, data.getMessages());  
+        }  
+    });    
+};
 
 const makeTextDarker = (event) => {
     if (event.target.checked === true) {
@@ -20,17 +35,12 @@ const makeTextBigger = (event) => {
 
 const toggleControls = () => {
     document.getElementById("selectordiv").addEventListener("change", (event)=> {
-        // console.log(event);
         if (event.target.id === "dark") {
-            // console.log("darker");
             makeTextDarker(event);
         } else if (event.target.id === "bigger") {
-            // console.log("bigger");
             makeTextBigger(event);
         }
     });
 };
 
-module.exports = toggleControls;
-
-
+module.exports = {getNewMessage, toggleControls};

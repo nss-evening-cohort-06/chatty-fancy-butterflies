@@ -3,9 +3,9 @@
 const data = require("./data"); 
 const events = require("./events.js");
 
-console.log("I'm a dirty daddy");
+events.getNewMessage();
 
 data.initializer();
-events();
+events.toggleControls();
 
 

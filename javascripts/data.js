@@ -22,16 +22,16 @@ const initializer = () => {
 };
 
 //getter for array containing messages in the json file 
-const getInitialMessages = () => {
+const getMessages = () => {
     return messages;
   };
 
-const storeMessage = (messageObj) => {
-    messages.push(messageObj); 
+const updateMessages = (messageArray) => {
+    messages = messageArray; 
 };
 
 module.exports = {
     initializer,
-    getInitialMessages,
-    storeMessage
+    getMessages,
+    updateMessages
 };
