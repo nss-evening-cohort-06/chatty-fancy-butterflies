@@ -1,5 +1,7 @@
 body {
-	background-color: purple;
+	background-color: #D2D7DF;
+	/* background-image: url('http://www.themesltd.com/headers2/peter_griffin_family_guy_face.png'); */
+	font-family: 'Roboto', sans-serif;
 }
 
 .navbar-center
@@ -20,4 +22,29 @@ input[type=text] {
 	top: 7px;
 	width: 40px;
 	height: 40px;
+}
+
+.makeTextDark {
+	background-color: #353535;
+	color: white;
+}
+
+.makeTextBig {
+	font-size: 36px;
+}
+
+#selectordiv {
+	margin-top: 60px;
+	text-align: center;
+	font-size: 24px;
+	color: #fff;
+}
+
+.container {
+	padding: 10px;
+	box-shadow: 0px 5px 2px #8A897C;
+}
+
+.messages {
+	background-color: #fff;
 }
