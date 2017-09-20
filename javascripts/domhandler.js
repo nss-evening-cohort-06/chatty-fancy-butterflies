@@ -8,7 +8,7 @@ const writeToDom = (messagesArr) => {
         domString += 
             `<div class="message row" id="message-${message.id}">
                 <div class="message-text col-md-9">${message.text}</div>
-                <div class="message-btn col-md-3"><button class="delete-button" id="delete-btn-${message.id}">Delete</button></div>
+                <div class="message-btn col-md-3"><button class="delete-button btn btn-danger" id="delete-btn-${message.id}">Delete</button></div>
             </div>`;
     });
     messageDiv.innerHTML = domString; 
