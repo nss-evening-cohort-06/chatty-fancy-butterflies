@@ -1,21 +1,20 @@
 'use strict';
 
 const getMessage = require('./messages');
-const initialMessages = require('./data');
-
-const preventFormSubmission= () => {
-    return false;
-};
+const data = require('./data');
 
 const getNewMessage = () => {
     let messageInput = document.getElementById('messageInput');
     messageInput.addEventListener('keypress', (e) => {
-        if (key === 13) {
-            preventFormSubmission();
-        }   
-        getMessage(e, initialMessages.getInitialMessages()); 
+        console.log(e);
+        if (e.keyCode === 13) {
+            e.preventDefault();
+            console.log('enter', e);
+            getMessage(e, data.getMessages());  
+        }  
     });    
 };
+
 const makeTextDarker = (event) => {
     if (event.target.checked === true) {
         event.target.parentNode.nextElementSibling.classList.remove("messages");
@@ -36,25 +35,12 @@ const makeTextBigger = (event) => {
 
 const toggleControls = () => {
     document.getElementById("selectordiv").addEventListener("change", (event)=> {
-        // console.log(event);
         if (event.target.id === "dark") {
-            // console.log("darker");
             makeTextDarker(event);
         } else if (event.target.id === "bigger") {
-            // console.log("bigger");
             makeTextBigger(event);
         }
     });
 };
 
-<<<<<<< HEAD
-const deleteMessage = () => {
-    
-};
-
-module.exports = {getNewMessage, deleteMessage};
-=======
-module.exports = toggleControls;
-
-
->>>>>>> master
+module.exports = {getNewMessage, toggleControls};
