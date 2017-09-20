@@ -16,4 +16,4 @@ const deleteMessage = () => {
     
 };
 
-module.exports = getNewMessage;
+module.exports = {getNewMessage, deleteMessage};
