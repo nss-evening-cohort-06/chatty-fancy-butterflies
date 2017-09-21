@@ -101,10 +101,44 @@ var delay = (function() {
 
 
 
+//gets the edited message from the edit input, and then updates its original message in the array.
+const editMessage = () => {
+    document.getElementById("messagediv").addEventListener("click", (event) => {
+        if (event.target.classList.contains("edit-btn")) {
+            let showmessage;
+            let id = parseInt(event.target.id.split("-")[2]);
+            let messages = data.getMessages();
+                messages.forEach((message) => {
+                    if (id === message.id) {
+                        showmessage = message.text;
+                        document.getElementById("message-text").value = showmessage;
+                        document.getElementById("editid").innerHTML = id;
+                    }
+                });
+        }
+    replaceMessage();
+    });
+};
+
+const replaceMessage = () => {
+    document.getElementById("edit-message").addEventListener("click", () => {
+        let messageToEdit = document.getElementById("message-text").value;
+        let idToEdit = parseInt(document.getElementById("editid").innerHTML);
+        let messages = data.getMessages();
+            messages.forEach((message) => {
+                if (idToEdit === message.id) {
+                  message.text = messageToEdit;  
+                }
+            });
+        dom.writeToDom(messages);
+        data.updateMessages(messages);
+    });
+};
 
 module.exports = {
     getNewMessage, 
     toggleControls, 
     deleteButton,
-    userSelection
+    userSelection,
+    editMessage
 };

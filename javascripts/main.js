@@ -12,3 +12,4 @@ events.deleteButton();
 events.userSelection();
 clear.addClearFxn();
 events.deleteButton();
+events.editMessage();
