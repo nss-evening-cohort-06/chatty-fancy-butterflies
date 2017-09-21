@@ -86,8 +86,6 @@ const editMessage = () => {
                         document.getElementById("editid").innerHTML = id;
                     }
                 });
-            // dom.writeToDom(messages);
-            // data.updateMessages(messages);
         }
     replaceMessage();
     });
