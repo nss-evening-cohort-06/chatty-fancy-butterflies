@@ -3,57 +3,34 @@
 		{
 			"id": 1,
 			"text": "Oh yeah, you really told him, didn't you?",
-<<<<<<< HEAD
             "userName": "",
-            "createdDate": null 
-=======
-            "userId": 1,
-            "createdDate": "Wednesday, September 20, 2017 5:41 PM" 
->>>>>>> master
+            "createdDate": "Wednesday, September 20, 2017 5:41 PM"
+
 		},
 		{
 			"id": 2,
 			"text": "We can't. I'm your boss.",
-<<<<<<< HEAD
             "userName": "",
-            "createdDate": null 
-=======
-            "userId": 1,
             "createdDate": "Wednesday, September 20, 2017 5:42 PM" 
->>>>>>> master
         },
         {
 			"id": 3,
 			"text": "If you leave now, you get nothing.",
-<<<<<<< HEAD
             "userName": "",
-            "createdDate": null
-=======
-            "userId": 1,
+
             "createdDate": "Wednesday, September 20, 2017 5:47 PM" 
->>>>>>> master
         },
         {
 			"id": 4,
 			"text": "There's someone in the house!",
-<<<<<<< HEAD
             "userName": "",
-            "createdDate": null
-=======
-            "userId": 1,
             "createdDate": "Wednesday, September 20, 2017 5:50 PM" 
->>>>>>> master
         },
         {
 			"id": 5,
 			"text": "No! I'm tired of doing what you say.",
-<<<<<<< HEAD
             "userName": "",
-            "createdDate": null 
-=======
-            "userId": 1,
             "createdDate": "Wednesday, September 20, 2017 6:00 PM" 
->>>>>>> master
         }
         
 
