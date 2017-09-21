@@ -82,7 +82,9 @@ const typingIndicator = () => {
             delay(function () {
                 typingIndicator.classList.add("hidden");
             }, 500); 
-        }       
+        } else {
+            typingIndicator.classList.add("hidden");
+        }      
     });
 };
 
