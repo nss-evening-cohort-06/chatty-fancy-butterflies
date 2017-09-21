@@ -96,7 +96,7 @@ const editMessage = () => {
 const replaceMessage = () => {
     document.getElementById("edit-message").addEventListener("click", () => {
         let messageToEdit = document.getElementById("message-text").value;
-        let idToEdit = document.getElementById("editid").innerHTML;
+        let idToEdit = parseInt(document.getElementById("editid").innerHTML);
         let messages = data.getMessages();
             messages.forEach((message) => {
                 if (idToEdit === message.id) {
