@@ -72,6 +72,36 @@ const userSelection = () => {
     });
 };
 
+//fires when a user is typing in the textbox and populates message div with a typing indicator
+const typingIndicator = () => {
+    let messageInput = document.getElementById('messageInput');
+    let typingIndicator = document.getElementById("typing-indicator");
+    messageInput.addEventListener('keydown', (e) =>{
+        if (e.key !=="Enter"){
+            typingIndicator.classList.remove("hidden");
+            delay(function () {
+                typingIndicator.classList.add("hidden");
+            }, 500); 
+        }       
+    });
+};
+
+typingIndicator(); 
+
+
+
+var delay = (function() {
+	var timer = [];
+	return function(callback, ms, key) {
+		key = key || 0;
+		clearTimeout(timer[key]);
+		timer[key] = setTimeout(callback, ms);
+	};
+})();
+
+
+
+
 module.exports = {
     getNewMessage, 
     toggleControls, 
