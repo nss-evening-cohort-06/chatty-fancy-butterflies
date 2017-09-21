@@ -51,3 +51,10 @@ CLASSES
 	background-color: #fff;
 }
 
+.subtext {
+	font-size: .7em;
+}
+
+.hidden {
+	display: none;
+}
