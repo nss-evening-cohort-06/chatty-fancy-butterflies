@@ -42,7 +42,7 @@ const loadList = () => {
 
     pageList = list.slice(begin, end);
     drawList();    // draws out our data
-    //check();         // determines the states of the pagination buttons
+    check();         // determines the states of the pagination buttons
 };
 
 const drawList = () => {
@@ -51,4 +51,11 @@ const drawList = () => {
     for (let r = 0; r < pageList.length; r++) {
         document.getElementById("list").innerHTML += pageList[r] + "";
     }
+};
+
+const check = () => {
+    document.getElementById("next").disabled = currentPage == numberOfPages ? true : false;
+    document.getElementById("previous").disabled = currentPage == 1 ? true : false;
+    document.getElementById("first").disabled = currentPage == 1 ? true : false;
+    document.getElementById("last").disabled = currentPage == numberOfPages ? true : false;
 };
