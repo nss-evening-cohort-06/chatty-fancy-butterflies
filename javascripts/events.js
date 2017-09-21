@@ -11,7 +11,7 @@ const getNewMessage = () => {
         if (e.keyCode === 13) {
             e.preventDefault();
             getMessage(e, data.getMessages());
-            document.getElementById("messageInput").value = "";  
+            document.getElementById("messageInput").value = "";    
         }  
     });    
 };
@@ -46,7 +46,7 @@ const toggleControls = () => {
 
 const deleteButton = () => {
     document.getElementById("messagediv").addEventListener("click", (event) => {
-        if (event.target.classList.contains("delete-button")) {
+        if (event.target.classList.contains("delete-btn")) {
             let id = parseInt(event.target.id.split("-")[2]);
             let messages = data.getMessages();
                 messages.forEach((message, index) => {
