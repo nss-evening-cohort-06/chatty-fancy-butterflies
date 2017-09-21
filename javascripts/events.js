@@ -72,26 +72,32 @@ const userSelection = () => {
     });
 };
 
+
 //fires when a user is typing in the textbox and populates message div with a typing indicator
 const typingIndicator = () => {
     let messageInput = document.getElementById('messageInput');
-    let typingIndicator = document.getElementById("typing-indicator");
+    let timer = 500; //in ms - how long the indicator will remain after the last keystroke
     messageInput.addEventListener('keydown', (e) =>{
-        if (e.key !=="Enter"){
-            typingIndicator.classList.remove("hidden");
-            delay(function () {
-                typingIndicator.classList.add("hidden");
-            }, 500); 
-        } else {
-            typingIndicator.classList.add("hidden");
-        }      
+        if (e.key !=="Enter"){ //indicator does not appear when enter is pressed 
+            let typingIndicator = document.getElementById("typing-indicator-row");
+            if (typingIndicator === null) { //if the typing indicator is not on the page then add it 
+                dom.showTypingIndicatorRow();
+                delay(function () { //sets the delay to remove the typing indicator 
+                    dom.removeTypingIndicatorRow(); 
+                }, timer); 
+            } else { //resets the delay for each keystroke if the indicator is already on the page 
+                delay(function () {
+                    dom.removeTypingIndicatorRow();
+                }, timer); 
+            }
+        } 
+        else {
+            dom.removeTypingIndicatorRow(); //removes the typing indicator when enter is pressed
+        }           
     });
 };
 
-typingIndicator(); 
-
-
-
+//delay wrapper function - used in the typingIndicator function 
 var delay = (function() {
 	var timer = [];
 	return function(callback, ms, key) {
@@ -142,5 +148,6 @@ module.exports = {
     toggleControls, 
     deleteButton,
     userSelection,
-    editMessage
+    editMessage,
+    typingIndicator
 };

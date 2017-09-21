@@ -30,6 +30,9 @@ ID's
 	height: 40px;
 }
 
+#typing-indicator-row {
+	text-align: center; 
+}
 /* --------
 CLASSES
 ----------- */

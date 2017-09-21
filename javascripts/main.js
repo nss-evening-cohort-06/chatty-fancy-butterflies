@@ -13,3 +13,4 @@ events.userSelection();
 clear.addClearFxn();
 events.deleteButton();
 events.editMessage();
+events.typingIndicator(); 
