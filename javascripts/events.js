@@ -98,7 +98,7 @@ const typingIndicator = () => {
 };
 
 //delay wrapper function - used in the typingIndicator function 
-var delay = (function() {
+const delay = (function() {
 	var timer = [];
 	return function(callback, ms, key) {
 		key = key || 0;
