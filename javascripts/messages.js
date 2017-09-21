@@ -3,7 +3,8 @@
 const timeStamp = require('./timeStamp.js');
 
 const data = require('./data');
-const printToDom = require('./domhandler');
+const dom = require('./domhandler');
+const users = require('./users');
 
 const getMessage = (e, messages) => {
     let id = messages.length + 1;       
@@ -11,11 +12,11 @@ const getMessage = (e, messages) => {
     let messageValue = {
         "id": id,
         "text": `${newMessage}`,
-        "userId": 1,
+        "userName": `${users.getCurrentUser()}`,
         "createdDate": timeStamp()
     };
     messages.push(messageValue);
-    printToDom(messages);
+    dom.writeToDom(messages);
     data.updateMessages(messages);
 };
 
