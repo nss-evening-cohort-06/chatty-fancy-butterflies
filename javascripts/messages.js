@@ -5,12 +5,6 @@ const timeStamp = require('./timeStamp.js');
 const data = require('./data');
 const printToDom = require('./domhandler');
 
-// const timeStamp = () => {
-//     let dt = new Date();
-//     let utcDate = dt.toLocaleString(["America/Chicago"]);
-//     return utcDate;
-// };
-
 const getMessage = (e, messages) => {
     let id = messages.length + 1;       
     let newMessage = document.getElementById('messageInput').value;
