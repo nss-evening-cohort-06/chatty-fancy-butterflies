@@ -73,6 +73,43 @@ const userSelection = () => {
     });
 };
 
+
+//fires when a user is typing in the textbox and populates message div with a typing indicator
+const typingIndicator = () => {
+    let messageInput = document.getElementById('messageInput');
+    let timer = 500; //in ms - how long the indicator will remain after the last keystroke
+    messageInput.addEventListener('keydown', (e) =>{
+        if (e.key !=="Enter"){ //indicator does not appear when enter is pressed 
+            let typingIndicator = document.getElementById("typing-indicator-row");
+            if (typingIndicator === null) { //if the typing indicator is not on the page then add it 
+                dom.showTypingIndicatorRow();
+                delay(function () { //sets the delay to remove the typing indicator 
+                    dom.removeTypingIndicatorRow(); 
+                }, timer); 
+            } else { //resets the delay for each keystroke if the indicator is already on the page 
+                delay(function () {
+                    dom.removeTypingIndicatorRow();
+                }, timer); 
+            }
+        } 
+        else {
+            dom.removeTypingIndicatorRow(); //removes the typing indicator when enter is pressed
+        }           
+    });
+};
+
+//delay wrapper function - used in the typingIndicator function 
+const delay = (function() {
+	var timer = [];
+	return function(callback, ms, key) {
+		key = key || 0;
+		clearTimeout(timer[key]);
+		timer[key] = setTimeout(callback, ms);
+	};
+})();
+
+
+
 //gets the edited message from the edit input, and then updates its original message in the array.
 const editMessage = () => {
     document.getElementById("messagediv").addEventListener("click", (event) => {
@@ -128,5 +165,6 @@ module.exports = {
     deleteButton,
     userSelection,
     editMessage,
-    changeMessagePage
+    changeMessagePage,
+    typingIndicator
 };

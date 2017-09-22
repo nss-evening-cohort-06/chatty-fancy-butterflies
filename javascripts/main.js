@@ -14,3 +14,5 @@ clear.addClearFxn();
 events.deleteButton();
 events.editMessage();
 events.changeMessagePage();
+events.typingIndicator(); 
+

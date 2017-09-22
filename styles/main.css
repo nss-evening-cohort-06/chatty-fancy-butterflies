@@ -9,6 +9,10 @@ input[type=text] {
     width: 400px !important;
 }
 
+.hidden {
+	display: none; 
+}
+
 /* --------
 ID's
 --------- */ 
@@ -26,6 +30,9 @@ ID's
 	height: 40px;
 }
 
+#typing-indicator-row {
+	text-align: center; 
+}
 /* --------
 CLASSES
 ----------- */
