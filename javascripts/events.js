@@ -4,13 +4,14 @@ const getMessage = require('./messages');
 const data = require('./data');
 const dom = require('./domhandler');
 const users = require('./users');
+const pagination = require('./pagination');
 
 const getNewMessage = () => {
     let messageInput = document.getElementById('messageInput');
     messageInput.addEventListener('keypress', (e) => {
         if (e.keyCode === 13) {
             e.preventDefault();
-            getMessage(e, data.getMessages());
+            getMessage(data.getMessages());
             document.getElementById("messageInput").value = "";    
         }  
     });    
@@ -106,10 +107,26 @@ const replaceMessage = () => {
     });
 };
 
+const changeMessagePage = () => {
+    document.getElementById('paginationDiv').addEventListener('click', (e) => {
+        if (e.target.id === "first") {
+            pagination.firstPage();
+        } else if (e.target.id === "next") {
+            pagination.nextPage();
+        } else if (e.target.id === "previous") {
+            pagination.previousPage();
+        } else if (e.target.id === "last") {
+            pagination.lastPage();
+        }
+    });
+};
+
+
 module.exports = {
     getNewMessage, 
     toggleControls, 
     deleteButton,
     userSelection,
-    editMessage
+    editMessage,
+    changeMessagePage
 };

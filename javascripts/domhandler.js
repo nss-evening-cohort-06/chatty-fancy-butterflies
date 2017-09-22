@@ -28,8 +28,23 @@ const populateUserOptions = (userObj) => {
     userDropdownMenu.innerHTML = userListItems; 
 };
 
+//adds pagination buttons to the dom
+const printPagination = () => {
+    let paginationDiv = document.getElementById('paginationDiv');
+    let domString =
+        `<div class='row'>
+            <div class='text-center'> 
+                <input type="button" class='btn btn-default' id="first" value="first" />
+                <input type="button" class='btn btn-default' id="next" value="next" />
+                <input type="button" class='btn btn-default' id="previous" value="previous" />
+                <input type="button" class='btn btn-default' id="last" value="last" />
+            </div>    
+        </div>`;
+        paginationDiv.innerHTML = domString;
+};
 
 module.exports = {
     writeToDom,
-    populateUserOptions
+    populateUserOptions,
+    printPagination
 };
