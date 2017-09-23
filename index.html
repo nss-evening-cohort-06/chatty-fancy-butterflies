@@ -6,26 +6,55 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="styles/main.css">
 </head>
-<body>
+<body id="body">
 
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="#"><img id="img-old-man" src="./images/oldMan.jpg" ></a>
       <form class="navbar-form navbar-center" role="search">
         <div class="form-group">
-          <input id="messageInput" type="text" class="form-control" placeholder="Search">
+          <input id="messageInput" type="text" class="form-control" placeholder="Add a message...">
+          <button id="btn-clear" type="reset" class="btn btn-default">Clear</button>
         </div>
-        <button id="btn-clear" type="reset" class="btn btn-default">Clear</button>
       </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li id="user-dropdown" class="dropdown">
+          <a href="#" id="user-dropdown-toggle" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Select a user <span class="caret"></span></a>
+          <ul id="user-dropdown-menu" class="dropdown-menu"></ul>
+        </li>
+      </ul>
     </div>
   </nav>
 
-  <div id="selectordiv">
-    <input type="checkbox" name="dark" id="dark"> Take Me To A Dark Room...
-    <input type="checkbox" name="bigger" id="bigger"> Make Me Bigger Daddy...
+  <div id="selectordiv" class="container">
+    <span class="col-md-6 col-xs-6"><input type="checkbox" name="dark" id="dark"> Take Me To A Dark Room...</span>
+    <span class="col-md-6 col-xs-6"><input type="checkbox" name="bigger" id="bigger"> Make Me Bigger Daddy...</span>
   </div>
-
 <div id="messagediv" class="container messages"></div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="hidden" id="editid"></div>
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">Edit Message</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="message-text" class="control-label">Message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success" id="edit-message" data-dismiss="modal">Edit Message</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"

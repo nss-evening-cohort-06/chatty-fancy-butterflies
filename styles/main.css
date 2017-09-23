@@ -1,9 +1,218 @@
+/* ----------
+GENERAL STYLES
+------------- */
 body {
 	background-color: #D2D7DF;
-	/* background-image: url('http://www.themesltd.com/headers2/peter_griffin_family_guy_face.png'); */
 	font-family: 'Roboto', sans-serif;
+	min-width: 770px;
+}
+body {
+background:
+	linear-gradient(
+		limegreen,
+		transparent
+	),
+	linear-gradient(
+		90deg,
+		skyblue,
+		transparent
+	),
+	linear-gradient(
+		-90deg,
+		coral,
+		transparent
+	);
+	
+background-blend-mode: screen;
 }
 
+body {
+	background:
+	radial-gradient(
+		circle at left,
+		transparent,
+		#99eb47,
+		#99eb47 3.36927%,
+		transparent 3.36927%,
+		transparent 6.73854%,
+		#b3e87d 6.73854%,
+		#b3e87d 10.10782%,
+		transparent 10.10782%,
+		transparent 13.47709%,
+		#ccebad 13.47709%,
+		#ccebad 16.84636%,
+		transparent 16.84636%,
+		transparent 20.21563%,
+		#a6ed5e 20.21563%,
+		#a6ed5e 23.58491%,
+		transparent 23.58491%,
+		transparent 26.95418%,
+		#ccebad 26.95418%,
+		#ccebad 30.32345%,
+		transparent 30.32345%,
+		transparent 33.69272%,
+		#b3e87d 33.69272%,
+		#b3e87d 37.06199%,
+		transparent 37.06199%,
+		transparent 40.43127%,
+		#99eb47 40.43127%,
+		#99eb47 43.80054%,
+		transparent 43.80054%,
+		transparent 47.16981%
+	),
+	radial-gradient(
+		circle at right,
+		transparent,
+		#99eb47 0%,
+		#99eb47 3.36927%,
+		transparent 3.36927%,
+		transparent 6.73854%,
+		#b3e87d 6.73854%,
+		#b3e87d 10.10782%,
+		transparent 10.10782%,
+		transparent 13.47709%,
+		#ccebad 13.47709%,
+		#ccebad 16.84636%,
+		transparent 16.84636%,
+		transparent 20.21563%,
+		#a6ed5e 20.21563%,
+		#a6ed5e 23.58491%,
+		transparent 23.58491%,
+		transparent 26.95418%,
+		#ccebad 26.95418%,
+		#ccebad 30.32345%,
+		transparent 30.32345%,
+		transparent 33.69272%,
+		#b3e87d 33.69272%,
+		#b3e87d 37.06199%,
+		transparent 37.06199%,
+		transparent 40.43127%,
+		#99eb47 40.43127%,
+		#99eb47 43.80054%,
+		transparent 43.80054%,
+		transparent 47.16981%
+	),
+	radial-gradient(circle at left,
+		transparent,
+		#99eb47 0%,
+		#99eb47 3.36927%,
+		transparent 3.36927%,
+		transparent 6.73854%,
+		#b3e87d 6.73854%,
+		#b3e87d 10.10782%,
+		transparent 10.10782%,
+		transparent 13.47709%,
+		#ccebad 13.47709%,
+		#ccebad 16.84636%,
+		transparent 16.84636%,
+		transparent 20.21563%,
+		#a6ed5e 20.21563%,
+		#a6ed5e 23.58491%,
+		transparent 23.58491%,
+		transparent 26.95418%,
+		#ccebad 26.95418%,
+		#ccebad 30.32345%,
+		transparent 30.32345%,
+		transparent 33.69272%,
+		#b3e87d 33.69272%,
+		#b3e87d 37.06199%,
+		transparent 37.06199%,
+		transparent 40.43127%,
+		#99eb47 40.43127%,
+		#99eb47 43.80054%,
+		transparent 43.80054%,
+		transparent 47.16981%
+	),
+	radial-gradient(circle at right,
+		transparent,
+		#99eb47 0%,
+		#99eb47 3.36927%,
+		transparent 3.36927%,
+		transparent 6.73854%,
+		#b3e87d 6.73854%,
+		#b3e87d 10.10782%,
+		transparent 10.10782%,
+		transparent 13.47709%,
+		#ccebad 13.47709%,
+		#ccebad 16.84636%,
+		transparent 16.84636%,
+		transparent 20.21563%,
+		#a6ed5e 20.21563%,
+		#a6ed5e 23.58491%,
+		transparent 23.58491%,
+		transparent 26.95418%,
+		#ccebad 26.95418%,
+		#ccebad 30.32345%,
+		transparent 30.32345%,
+		transparent 33.69272%,
+		#b3e87d 33.69272%,
+		#b3e87d 37.06199%,
+		transparent 37.06199%,
+		transparent 40.43127%,
+		#99eb47 40.43127%,
+		#99eb47 43.80054%,
+		transparent 43.80054%,
+		transparent 47.16981%
+	), #99e052;
+
+background-size: 4em 4em;
+background-position:
+	0 0,
+	0 2em,
+	2em 0,
+	2em 2em;
+background-blend-mode:
+	overlay,
+	overlay,
+	normal,
+	normal;
+}
+body {
+	background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI3NSIgaGVpZ2h0PSIxMDAiPgo8cmVjdCB3aWR0aD0iNzUiIGhlaWdodD0iMTAwIiBmaWxsPSJzbGF0ZWdyYXkiPjwvcmVjdD4KPGNpcmNsZSBjeD0iNzUiIGN5PSI1MCIgcj0iMjguMyUiIHN0cm9rZS13aWR0aD0iMTIiIHN0cm9rZT0iIzlhYTZiMiIgZmlsbD0ibm9uZSI+PC9jaXJjbGU+CjxjaXJjbGUgY3g9IjAiIHI9IjI4LjMlIiBzdHJva2Utd2lkdGg9IjEyIiBzdHJva2U9IiM5YWE2YjIiIGZpbGw9Im5vbmUiPjwvY2lyY2xlPgo8Y2lyY2xlIGN5PSIxMDAiIHI9IjI4LjMlIiBzdHJva2Utd2lkdGg9IjEyIiBzdHJva2U9IiM5YWE2YjIiIGZpbGw9Im5vbmUiPjwvY2lyY2xlPgo8L3N2Zz4=");
+}
+.bodydarkplace {
+	background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNSIgaGVpZ2h0PSIxNSI+CjxyZWN0IHdpZHRoPSIxNSIgaGVpZ2h0PSIxNSIgZmlsbD0iIzRmNjM4ZCI+PC9yZWN0Pgo8cGF0aCBkPSJNMCAxNUw3LjUgMEwxNSAxNVoiIGZpbGw9IiMzMDMzNTUiPjwvcGF0aD4KPC9zdmc+");
+}
+.bodydarkplace {
+	background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjNDAzYzNmIj48L3JlY3Q+CjxwYXRoIGQ9Ik0wIDBMOCA4Wk04IDBMMCA4WiIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2U9IiMxZTI5MmQiPjwvcGF0aD4KPC9zdmc+");
+}
+input[type=text] {
+    width: 400px !important;
+}
+
+.hidden {
+	display: none; 
+}
+
+/* --------
+ID's
+--------- */ 
+#selectordiv {
+	margin-top: 60px;
+	text-align: center;
+	font-size: 24px;
+	color: #fff;
+	box-shadow: 0px 0px 0px;
+}
+#img-old-man {
+	position: fixed;
+	left: 5px;
+	top: 7px;
+	width: 40px;
+	height: 40px;
+	border-radius: 100%;
+}
+
+#typing-indicator-row {
+	text-align: center; 
+
+}
+#messagediv {
+	border-radius: 25px;
+}
+/* --------
+CLASSES
+----------- */
 .navbar-center
 {
     position: absolute;
@@ -11,40 +220,25 @@ body {
     text-align: center;
     margin: 7px auto ;
 }
-
-input[type=text] {
-    width: 400px !important;
-}
-
-#img-old-man {
-	position: fixed;
-	left: 5px;
-	top: 7px;
-	width: 40px;
-	height: 40px;
-}
-
 .makeTextDark {
-	background-color: #353535;
+	background-color: #615f5f;
 	color: white;
 }
-
 .makeTextBig {
 	font-size: 36px;
 }
-
-#selectordiv {
-	margin-top: 60px;
-	text-align: center;
-	font-size: 24px;
-	color: #fff;
-}
-
 .container {
 	padding: 10px;
 	box-shadow: 0px 5px 2px #8A897C;
 }
-
 .messages {
 	background-color: #fff;
+}
+
+.subtext {
+	font-size: .7em;
+}
+
+.hidden {
+	display: none;
 }

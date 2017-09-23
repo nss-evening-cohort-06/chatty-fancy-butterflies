@@ -8,7 +8,9 @@ events.getNewMessage();
 
 data.initializer();
 events.toggleControls();
+events.deleteButton();
+events.userSelection();
 clear.addClearFxn();
-
-
-//console.log(moment().format('llll'));
+events.deleteButton();
+events.editMessage();
+events.typingIndicator(); 
