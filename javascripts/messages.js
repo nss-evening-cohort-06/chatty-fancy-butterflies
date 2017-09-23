@@ -17,8 +17,9 @@ const getMessage = (messages) => {
         "createdDate": timeStamp()
     };
     if (messages.length > 20) {
+        document.getElementById("messagediv").innerHTML = "";
         dom.printPagination();
-        
+        dom.writeToDom(pagination.loadData());
     }
         messages.push(messageValue);
         dom.writeToDom(messages);

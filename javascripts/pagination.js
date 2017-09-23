@@ -47,12 +47,10 @@ const loadDomList = () => {
     let begin = ((currentPage - 1) * numberOfMessagesPerPage);
     let end = begin + numberOfMessagesPerPage;
     pageList = list.slice(begin, end);
-    // console.log('pageList array after slice', pageList);
     dom.writeToDom(pageList); //sends the range of messages that are to be displayed to the domHandler
-    // firstPage();
     check();         // determines the disabled states of the pagination buttons
 };
-//will need to be reconfigured for bootstrap pagination buttons
+
 const check = () => {
     console.log('"check()" func entered');
     document.getElementById("next").disabled = currentPage === numberOfPages ? true : false;
@@ -66,5 +64,6 @@ module.exports = {
     previousPage,
     firstPage,
     lastPage,
-    loadDomList
+    loadDomList,
+    loadData
 };

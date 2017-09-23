@@ -17,6 +17,7 @@ const writeToDom = (messagesArr) => {
     });
     messageDiv.innerHTML = domString; 
     messagesArr.reverse();
+    console.log(messagesArr.length);
 };
 
 //takes the user object and populates the name in the user dropdown -- is called in data.intializer 

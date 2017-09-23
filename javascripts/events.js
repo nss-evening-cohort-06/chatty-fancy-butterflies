@@ -167,14 +167,19 @@ const changeMessagePage = () => {
         }
     });
     //returns to page 1 when message box is clicked
-    returnToFirstPage();
+    // returnToFirstPage();
 };
 
-const returnToFirstPage = () => {
-    document.getElementById('messageInput').addEventListener('click', () => {
-        pagination.firstPage();
-    });
-};
+// const returnToFirstPage = () => {
+//     document.getElementById('messageInput').addEventListener('keypress', (e) => {
+//         if (e.keyCode === 'Enter') {
+//             let array = data.getMessages();
+//             pagination.nextPage();
+//         }
+        
+//         // pagination.firstPage();
+//     });
+// };
 
 module.exports = {
     getNewMessage, 
