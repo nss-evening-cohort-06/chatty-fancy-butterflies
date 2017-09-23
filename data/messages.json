@@ -3,33 +3,33 @@
 		{
 			"id": 1,
 			"text": "Oh yeah, you really told him, didn't you?",
-            "userName": "",
+            "userName": "Xavier",
             "createdDate": "Fri, Sep 22, 2017 8:12 PM"
 
 		},
 		{
 			"id": 2,
 			"text": "We can't. I'm your boss.",
-            "userName": "",
+            "userName": "Joanna",
             "createdDate": "Fri, Sep 22, 2017 8:15 PM" 
         },
         {
 			"id": 3,
 			"text": "If you leave now, you get nothing.",
-            "userName": "",
+            "userName": "Gunter",
 
             "createdDate": "Fri, Sep 22, 2017 8:30 PM" 
         },
         {
 			"id": 4,
 			"text": "There's someone in the house!",
-            "userName": "",
+            "userName": "Iveta",
             "createdDate": "Fri, Sep 22, 2017 9:10 PM" 
         },
         {
 			"id": 5,
 			"text": "No! I'm tired of doing what you say.",
-            "userName": "",
+            "userName": "Xavier",
             "createdDate": "Fri, Sep 22, 2017 9:11 PM" 
         }
         
