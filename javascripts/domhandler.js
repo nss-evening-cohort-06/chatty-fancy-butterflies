@@ -1,6 +1,5 @@
 "use strict";
 
-
 //takes an array of message objects, builds a dom string, and inserts into the messageDiv -- is called when in the whenMessagesLoad function and whenever the messages are refreshed
 const writeToDom = (messagesArr) => {
     let messageDiv = document.getElementById("messagediv");
@@ -28,7 +27,29 @@ const populateUserOptions = (userObj) => {
 };
 
 
+const showTypingIndicatorRow = () => {
+    let messageDiv = document.getElementById("messagediv");
+    let messageDivChild = messageDiv.firstChild; 
+    let typingIndicatorDiv = document.createElement("div");
+    //messageDiv.appendChild(typingIndicatorDiv); //need to decide if we want the indicator at the top or bottom of the message div
+    messageDiv.insertBefore(typingIndicatorDiv, messageDivChild);
+    typingIndicatorDiv.setAttribute("id", "typing-indicator-row");
+    typingIndicatorDiv.classList.add("row");
+    typingIndicatorDiv.classList.add("message");
+    let columnString = 
+        `<div class="typing-indicator-column col-md-12"><a href="#"><img id="img-message" src="./images/Message.svg" ></a></div>`;
+    typingIndicatorDiv.innerHTML += columnString;  
+ };
+
+ const removeTypingIndicatorRow = () => {
+    let typingIndicatorDiv = document.getElementById("typing-indicator-row"); 
+    typingIndicatorDiv.remove();  
+ };
+
+
 module.exports = {
     writeToDom,
-    populateUserOptions
+    populateUserOptions,
+    showTypingIndicatorRow,
+    removeTypingIndicatorRow
 };
