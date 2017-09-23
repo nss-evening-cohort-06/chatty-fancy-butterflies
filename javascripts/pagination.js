@@ -23,25 +23,21 @@ const getNumberOfPages = () => {
 
 const nextPage = () => {
     currentPage += 1;
-    // document.getElementById('pageNumber').innerHTML = `<a href='#'>Page ${currentPage}</a>`;
     loadDomList();
 };
 
 const previousPage = () => {
     currentPage -= 1;
-    // document.getElementById('pageNumber').innerHTML = `<a href='#'>Page ${currentPage}</a>`;
     loadDomList();
 };
 
 const firstPage = () => {
     currentPage = 1;
-    // document.getElementById('pageNumber').innerHTML = `<a href='#'>Page ${currentPage}</a>`;
     loadDomList();
 };
 
 const lastPage = () => {
     currentPage = numberOfPages;
-    // document.getElementById('pageNumber').innerHTML = `<a href='#'>Page ${currentPage}</a>`;
     loadDomList();
 };
 

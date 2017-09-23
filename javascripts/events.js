@@ -166,6 +166,7 @@ const changeMessagePage = () => {
             pagination.lastPage();
         }
     });
+    //returns to page 1 when message box is clicked
     returnToFirstPage();
 };
 

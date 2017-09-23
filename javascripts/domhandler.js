@@ -33,18 +33,16 @@ const populateUserOptions = (userObj) => {
 //adds pagination buttons to the dom
 const printPagination = () => {
     let paginationDivTop = document.getElementById('paginationDivTop');
-    let paginationDivBtm = document.getElementById('paginationDivBtm');
     let domString =
         `<div class='row'>
             <div class='text-center'> 
-            <button type="button" class="btn btn-info" id="first">first</button>
-            <button type="button" class="btn btn-info" id="next" class='btn btn-secondary btn-sm'>Next</button>
-            <button type="button" class="btn btn-info" id="previous">Previous</button>
-            <button type="button" class="btn btn-info" id="last">Last</button>
+            <button type="button" class="btn btn-info btn-sm" id="first">first</button>
+            <button type="button" class="btn btn-info btn-sm" id="next" class='btn btn-secondary btn-sm'>Next</button>
+            <button type="button" class="btn btn-info btn-sm" id="previous">Previous</button>
+            <button type="button" class="btn btn-info btn-sm" id="last">Last</button>
             </div>
         </div>`;
     paginationDivTop.innerHTML = domString;    
-    // paginationDivBtm.innerHTML = domString;
 };
 
 const showTypingIndicatorRow = () => {

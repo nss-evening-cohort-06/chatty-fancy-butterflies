@@ -18,7 +18,7 @@ const getMessage = (messages) => {
     };
     if (messages.length > 20) {
         dom.printPagination();
-        // pagination.firstPage();
+        
     }
         messages.push(messageValue);
         dom.writeToDom(messages);
