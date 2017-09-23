@@ -10,8 +10,12 @@ const getNewMessage = () => {
     messageInput.addEventListener('keypress', (e) => {
         if (e.keyCode === 13) {
             e.preventDefault();
+            if(document.getElementById("messageInput").value === "") {
+                // do noting
+            } else {
             getMessage(e, data.getMessages());
-            document.getElementById("messageInput").value = "";    
+            document.getElementById("messageInput").value = "";
+            }
         }  
     });    
 };

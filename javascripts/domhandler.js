@@ -4,7 +4,7 @@
 const writeToDom = (messagesArr) => {
     let messageDiv = document.getElementById("messagediv");
     let domString = "";
-    messagesArr.forEach((message) => {
+    messagesArr.reverse().forEach((message) => {
         domString += 
             `<div class="message row" id="message-${message.id}">
                 <div class="message-text col-md-1 col-sm-1 col-xs-1">${message.userName}</div>
