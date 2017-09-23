@@ -156,18 +156,17 @@ const replaceMessage = () => {
 //pagination button events
 const changeMessagePage = () => {
     document.body.addEventListener('click', (e) => {
-        if (e.target.classList.contains("first")) {
+        if (e.target.id === "first"){
             pagination.firstPage();
-        } else if (e.target.classList.contains("next") || e.target.classList.contains('nextBtn')) {
+        } else if (e.target.id === "next"){
             pagination.nextPage();
-        } else if (e.target.classList.contains("previous") || e.target.classList.contains('previousBtn')) {
+        } else if (e.target.id === "previous"){
             pagination.previousPage();
-        } else if (e.target.classList.contains("last")) {
+        } else if (e.target.id === "last"){
             pagination.lastPage();
-        } 
+        }
     });
 };
-
 
 module.exports = {
     getNewMessage, 

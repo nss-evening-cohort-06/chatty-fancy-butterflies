@@ -23,25 +23,25 @@ const getNumberOfPages = () => {
 
 const nextPage = () => {
     currentPage += 1;
-    document.getElementById('pageNumber').innerHTML = `<a href='#'>Page ${currentPage}</a>`;
+    // document.getElementById('pageNumber').innerHTML = `<a href='#'>Page ${currentPage}</a>`;
     loadDomList();
 };
 
 const previousPage = () => {
     currentPage -= 1;
-    document.getElementById('pageNumber').innerHTML = `<a href='#'>Page ${currentPage}</a>`;
+    // document.getElementById('pageNumber').innerHTML = `<a href='#'>Page ${currentPage}</a>`;
     loadDomList();
 };
 
 const firstPage = () => {
     currentPage = 1;
-    document.getElementById('pageNumber').innerHTML = `<a href='#'>Page ${currentPage}</a>`;
+    // document.getElementById('pageNumber').innerHTML = `<a href='#'>Page ${currentPage}</a>`;
     loadDomList();
 };
 
 const lastPage = () => {
     currentPage = numberOfPages;
-    document.getElementById('pageNumber').innerHTML = `<a href='#'>Page ${currentPage}</a>`;
+    // document.getElementById('pageNumber').innerHTML = `<a href='#'>Page ${currentPage}</a>`;
     loadDomList();
 };
 
@@ -59,10 +59,10 @@ const loadDomList = () => {
 //will need to be reconfigured for bootstrap pagination buttons
 const check = () => {
     console.log('"check()" func entered');
-    document.getElementsByClassName("next").disabled = currentPage === numberOfPages ? true : false;
-    document.getElementsByClassName("previous").disabled = currentPage === 1 ? true : false;
-    document.getElementsByClassName("first").disabled = currentPage === 1 ? true : false;
-    document.getElementsByClassName("last").disabled = currentPage === numberOfPages ? true : false;
+    document.getElementById("next").disabled = currentPage === numberOfPages ? true : false;
+    document.getElementById("previous").disabled = currentPage === 1 ? true : false;
+    document.getElementById("first").disabled = currentPage === 1 ? true : false;
+    document.getElementById("last").disabled = currentPage === numberOfPages ? true : false;
 };
 
 module.exports = {

@@ -36,26 +36,14 @@ const printPagination = () => {
     let domString =
         `<div class='row'>
             <div class='text-center'> 
-            <nav aria-label="Page navigation example">
-            <ul class="pagination pagination-sm">
-              <li class="page-item"><a class='first' class="page-link" href="#">First</a></li>
-              <li class="page-item">
-                <a class='previous' class="page-link" href="#" aria-label="Previous">
-                    <span class='previousBtn' aria-hidden="true">&laquo;</span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <li class="page-item">
-                <a class='next' class="page-link" href="#" aria-label="Next">
-                    <span class='nextBtn' aria-hidden="true">&raquo;</span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </li>
-              <li class="page-item"><a class='last' class="page-link" href="#">Last</a></li>
-            </ul>
-          </nav>    
+            <button type="button" class="btn btn-info" id="first">first</button>
+            <button type="button" class="btn btn-info" id="next" class='btn btn-secondary btn-sm'>Next</button>
+            <button type="button" class="btn btn-info" id="previous">Previous</button>
+            <button type="button" class="btn btn-info" id="last">Last</button>
+            </div>
         </div>`;
     paginationDivTop.innerHTML = domString;    
-    paginationDivBtm.innerHTML = domString;
+    // paginationDivBtm.innerHTML = domString;
 };
 
 const showTypingIndicatorRow = () => {
