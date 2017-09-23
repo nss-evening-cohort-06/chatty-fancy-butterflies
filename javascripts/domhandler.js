@@ -7,10 +7,11 @@ const writeToDom = (messagesArr) => {
     messagesArr.reverse().forEach((message) => {
         domString += 
             `<div class="message row" id="message-${message.id}">
-                <div class="message-text col-md-6">${message.text}</div>
-                <div class="message-text col-md-2 subtext">${message.userName} ${message.createdDate}</div>
-                <div class="message-btn col-md-2"><button class="delete-btn glyphicon glyphicon-trash btn btn-danger" id="delete-btn-${message.id}"></span></button></div>
-                <div class="message-btn col-md-2"><button class="edit-btn glyphicon glyphicon-pencil btn btn-warning" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" id="edit-btn-${message.id}"></span></button></div>
+                <div class="message-text col-md-1 col-sm-1 col-xs-1">${message.userName}</div>
+                <div class="message-text col-md-7 col-sm-5 col-xs-5">${message.text}</div>
+                <div class="message-text col-md-2 col-sm-3 col-xs-3 subtext">${message.createdDate}</div>
+                <div class="message-btn col-md-2 col-sm-3 col-xs-3"><button class="delete-btn glyphicon glyphicon-trash btn btn-danger" id="delete-btn-${message.id}"></span></button>&nbsp&nbsp<button class="edit-btn glyphicon glyphicon-pencil btn btn-warning" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" id="edit-btn-${message.id}"></span></button></div>
+                <!--<div class="message-btn col-md-2"></div>-->
             </div>`;
     });
     messageDiv.innerHTML = domString;

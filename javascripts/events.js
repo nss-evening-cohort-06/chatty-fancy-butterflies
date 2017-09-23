@@ -13,25 +13,34 @@ const getNewMessage = () => {
             e.preventDefault();
             getMessage(data.getMessages());
             document.getElementById("messageInput").value = "";    
+            if(document.getElementById("messageInput").value === "") {
+                // do noting
+            } else {
+            getMessage(e, data.getMessages());
+            document.getElementById("messageInput").value = "";
+            }
         }  
     });    
 };
 
 const makeTextDarker = (event) => {
     if (event.target.checked === true) {
-        event.target.parentNode.nextElementSibling.classList.remove("messages");
-        event.target.parentNode.nextElementSibling.classList.add("makeTextDark");
+        event.target.parentNode.parentNode.nextElementSibling.classList.remove("messages");
+        event.target.parentNode.parentNode.nextElementSibling.classList.add("makeTextDark");
+        document.getElementById("body").classList.add("bodydarkplace");
     } else if (event.target.checked === false) {
-        event.target.parentNode.nextElementSibling.classList.remove("makeTextDark");
-        event.target.parentNode.nextElementSibling.classList.add("messages");
+        event.target.parentNode.parentNode.nextElementSibling.classList.remove("makeTextDark");
+        event.target.parentNode.parentNode.nextElementSibling.classList.add("messages");
+        document.getElementById("body").classList.remove("bodydarkplace");
+
     }
 };
 
 const makeTextBigger = (event) => {
     if (event.target.checked === true) {
-        event.target.parentNode.nextElementSibling.classList.add("makeTextBig");
+        event.target.parentNode.parentNode.nextElementSibling.classList.add("makeTextBig");
     } else if (event.target.checked === false) {
-        event.target.parentNode.nextElementSibling.classList.remove("makeTextBig");
+        event.target.parentNode.parentNode.nextElementSibling.classList.remove("makeTextBig");
     }
 };
 
