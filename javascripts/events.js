@@ -144,17 +144,18 @@ const replaceMessage = () => {
     });
 };
 
+//pagination button events
 const changeMessagePage = () => {
     document.getElementById('paginationDiv').addEventListener('click', (e) => {
         if (e.target.id === "first") {
             pagination.firstPage();
-        } else if (e.target.id === "next") {
+        } else if (e.target.id === "next" || e.target.classList.contains('nextBtn')) {
             pagination.nextPage();
-        } else if (e.target.id === "previous") {
+        } else if (e.target.id === "previous" || e.target.classList.contains('previousBtn')) {
             pagination.previousPage();
         } else if (e.target.id === "last") {
             pagination.lastPage();
-        }
+        } 
     });
 };
 

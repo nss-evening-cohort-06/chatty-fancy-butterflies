@@ -11,54 +11,51 @@ let numberOfPages = 1;
 
 const loadData = () => {
     list = data.getMessages();
-    console.log('"list" array value from "loadData": ',list);
 };
 
 const setPageNumbers = () => {
-    console.log('setPageNumbers entered');
     numberOfPages = getNumberOfPages();
 };
 
 const getNumberOfPages = () => {
-    console.log('getNumberOfPages entered');
     return Math.ceil(list.length / numberOfMessagesPerPage);
 };
 
 const nextPage = () => {
-    console.log('next page clicked');
     currentPage += 1;
+    document.getElementById('pageNumber').innerHTML = `<a href='#'>Page ${currentPage}</a>`;
     loadList();
 };
 
 const previousPage = () => {
-    console.log('previous page clicked');
     currentPage -= 1;
+    document.getElementById('pageNumber').innerHTML = `<a href='#'>Page ${currentPage}</a>`;
     loadList();
 };
 
 const firstPage = () => {
-    console.log('first page clicked');
     currentPage = 1;
+    document.getElementById('pageNumber').innerHTML = `<a href='#'>Page ${currentPage}</a>`;
     loadList();
 };
 
 const lastPage = () => {
-    console.log('last page clicked');
     currentPage = numberOfPages;
+    document.getElementById('pageNumber').innerHTML = `<a href='#'>Page ${currentPage}</a>`;
     loadList();
 };
 
 const loadList = () => {
-    loadData();
+    loadData();      //loads global array from data.js
+    setPageNumbers(); //calculates the current number of pages
     let begin = ((currentPage - 1) * numberOfMessagesPerPage);
     let end = begin + numberOfMessagesPerPage;
     pageList = list.slice(begin, end);
-    dom.writeToDom(pageList);
-    check();         // determines the states of the pagination buttons
+    dom.writeToDom(pageList); //sends the range of messages that are to be displayed to the domHandler
+    check();         // determines the disabled states of the pagination buttons
 };
 
 const check = () => {
-    console.log('"check" function entered');
     document.getElementById("next").disabled = currentPage === numberOfPages ? true : false;
     document.getElementById("previous").disabled = currentPage === 1 ? true : false;
     document.getElementById("first").disabled = currentPage === 1 ? true : false;

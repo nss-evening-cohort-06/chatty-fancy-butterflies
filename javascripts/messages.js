@@ -1,7 +1,7 @@
 'use strict';
 
 const timeStamp = require('./timeStamp.js');
-
+const pagination = require('./pagination');
 const data = require('./data');
 const dom = require('./domhandler');
 const users = require('./users');
@@ -17,6 +17,7 @@ const getMessage = (messages) => {
     };
     if (messages.length > 20) {
         dom.printPagination();
+        // pagination.nextPage();
     }
     messages.push(messageValue);
     dom.writeToDom(messages);
