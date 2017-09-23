@@ -9,9 +9,8 @@ const writeToDom = (messagesArr) => {
         domString += 
             `<div class="message row" id="message-${message.id}">
                 <div class="message-text col-md-6">${message.text}</div>
-                <div class="message-text col-md-2 subtext">${message.userName} ${message.createdDate}</div>
-                <div class="message-btn col-md-2"><button class="delete-btn glyphicon glyphicon-trash btn btn-danger" id="delete-btn-${message.id}"></span></button></div>
-                <div class="message-btn col-md-2"><button class="edit-btn glyphicon glyphicon-pencil btn btn-warning" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" id="edit-btn-${message.id}"></span></button></div>
+                <div class="message-text col-md-4 subtext">${message.userName} ${message.createdDate}</div>
+                <div class="message-btn col-md-1 col-md-offset-1"><span class="edit-btn glyphicon glyphicon-pencil" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" id="edit-btn-${message.id}"></span><span class="delete-btn glyphicon glyphicon-trash" id="delete-btn-${message.id}"></span></div>
             </div>`;
     });
     messageDiv.innerHTML = domString; 

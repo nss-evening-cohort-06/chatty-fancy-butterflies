@@ -58,3 +58,11 @@ CLASSES
 .hidden {
 	display: none;
 }
+
+.delete-btn {
+	padding: 0 10px;
+}
+
+.edit-btn {
+	padding: 0 10px;
+}
