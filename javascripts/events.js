@@ -4,6 +4,7 @@ const getMessage = require('./messages');
 const data = require('./data');
 const dom = require('./domhandler');
 const users = require('./users');
+const effects = require('./effects');
 
 const getNewMessage = () => {
     let messageInput = document.getElementById('messageInput');
@@ -11,6 +12,7 @@ const getNewMessage = () => {
         if (e.keyCode === 13) {
             e.preventDefault();
             getMessage(e, data.getMessages());
+            addEffect(); 
             document.getElementById("messageInput").value = "";    
         }  
     });    
@@ -108,7 +110,6 @@ const delay = (function() {
 })();
 
 
-
 //gets the edited message from the edit input, and then updates its original message in the array.
 const editMessage = () => {
     document.getElementById("messagediv").addEventListener("click", (event) => {
@@ -143,11 +144,36 @@ const replaceMessage = () => {
     });
 };
 
+
+
+/***************************************
+ EFFECTS 
+***************************************/
+
+
+function addEffect() {
+    if (effects.getCurrentEffect() === "SnapChat"){
+        let timer = 10000;
+        let latestMessageId = data.getLatestMessageID();
+        let latestMessageIndex = latestMessageId - 1; 
+        let latestMessageElementId = `message-${latestMessageId}`;
+        $(`#${latestMessageElementId}`).fadeOut(timer);
+        setTimeout(() => {
+            data.getMessages().splice(latestMessageIndex, 1);
+        }, timer);
+    }
+}
+
+addEffect(); 
+
+
+
 module.exports = {
     getNewMessage, 
     toggleControls, 
     deleteButton,
     userSelection,
     editMessage,
-    typingIndicator
+    typingIndicator,
+    addEffect
 };

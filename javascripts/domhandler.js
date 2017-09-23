@@ -28,6 +28,8 @@ const populateUserOptions = (userObj) => {
 };
 
 
+
+
 const showTypingIndicatorRow = () => {
     let messageDiv = document.getElementById("messagediv");
     let messageDivChild = messageDiv.firstChild; 

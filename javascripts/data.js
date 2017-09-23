@@ -32,8 +32,14 @@ const updateMessages = (messageArray) => {
     messages = messageArray; 
 };
 
+const getLatestMessageID = () => {
+    let id = messages.length; 
+    return id;
+};
+
 module.exports = {
     initializer,
     getMessages,
-    updateMessages
+    updateMessages,
+    getLatestMessageID
 };
