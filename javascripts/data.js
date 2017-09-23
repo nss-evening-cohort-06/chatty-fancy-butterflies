@@ -37,10 +37,16 @@ const getMessages = () => {
 
 const updateMessages = (messageArray) => {
     messages = messageArray; 
+    console.log(messages);
+};
+
+const getEmojis = () => {
+    return emojis;
 };
 
 module.exports = {
     initializer,
     getMessages,
-    updateMessages
+    updateMessages,
+    getEmojis
 };
