@@ -5,6 +5,7 @@ const pagination = require('./pagination');
 const data = require('./data');
 const dom = require('./domhandler');
 const users = require('./users');
+const events = require('./events');
 
 const getMessage = (messages) => {
     let id = messages.length + 1;       
@@ -17,11 +18,11 @@ const getMessage = (messages) => {
     };
     if (messages.length > 20) {
         dom.printPagination();
-        // pagination.nextPage();
+        pagination.firstPage();
     }
-    messages.push(messageValue);
-    dom.writeToDom(messages);
-    data.updateMessages(messages);
+        messages.push(messageValue);
+        dom.writeToDom(messages);
+        data.updateMessages(messages);
 };
 
 module.exports = getMessage;
