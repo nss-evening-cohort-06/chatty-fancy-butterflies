@@ -8,12 +8,5 @@ const loadMessages = (success, error) => {
     categoryLoader.send();
 };
 
-const loadEmojis = (success, error) => {
-    const emojiLoader = new XMLHttpRequest();
-    emojiLoader.addEventListener("error", error);
-    emojiLoader.addEventListener("load", success);
-    emojiLoader.open("GET", "../data/emojis.json");
-    emojiLoader.send();
-};
 
-module.exports = {loadMessages, loadEmojis}; 
+module.exports = loadMessages; 
