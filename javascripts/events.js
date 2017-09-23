@@ -166,6 +166,13 @@ const changeMessagePage = () => {
             pagination.lastPage();
         }
     });
+    returnToFirstPage();
+};
+
+const returnToFirstPage = () => {
+    document.getElementById('messageInput').addEventListener('click', () => {
+        pagination.firstPage();
+    });
 };
 
 module.exports = {
