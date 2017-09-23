@@ -8,4 +8,5 @@ const loadMessages = (success, error) => {
     categoryLoader.send();
 };
 
+
 module.exports = loadMessages; 
