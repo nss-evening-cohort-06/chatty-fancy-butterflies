@@ -1,7 +1,7 @@
 "use strict";
 
 let users = {
-    names: ["Xavier", "Joanna", "Mackenzie", "Gunter", "Iveta", "Sven"]
+    names: ["Mystery Daddy","Xavier", "Joanna", "Mackenzie", "Gunter", "Iveta", "Sven"]
   };
 
 let currentUser = ""; 
