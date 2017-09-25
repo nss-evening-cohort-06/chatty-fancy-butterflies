@@ -5,6 +5,7 @@ const data = require('./data');
 const dom = require('./domhandler');
 const users = require('./users');
 
+
 const getNewMessage = () => {
     let messageInput = document.getElementById('messageInput');
     messageInput.addEventListener('keypress', (e) => {
@@ -112,7 +113,7 @@ const delay = (function() {
 		clearTimeout(timer[key]);
 		timer[key] = setTimeout(callback, ms);
 	};
-})();
+})(); 
 
 
 
@@ -150,11 +151,32 @@ const replaceMessage = () => {
     });
 };
 
+
+/******************************
+ Color pickers 
+ ******************************/
+
+
+const backgroundColor = () => {
+    
+    $('#backgroundColorPicker').colorpicker().on('changeColor', function(e) {
+        console.log(e);
+        document.getElementById('messagediv').style.background = e.color.toString(
+            'rgba');
+    });
+};
+
+
+
+
+
+
 module.exports = {
     getNewMessage, 
     toggleControls, 
     deleteButton,
     userSelection,
     editMessage,
-    typingIndicator
+    typingIndicator,
+    backgroundColor
 };

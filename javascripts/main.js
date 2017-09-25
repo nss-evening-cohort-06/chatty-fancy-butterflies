@@ -14,3 +14,4 @@ clear.addClearFxn();
 events.deleteButton();
 events.editMessage();
 events.typingIndicator(); 
+events.backgroundColor(); 
