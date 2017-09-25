@@ -7,6 +7,7 @@ const dom = require('./domhandler');
 const users = require('./users');
 const events = require('./events');
 
+//creates new message object and calls writeToDom to print to the page       
 const getMessage = (messages) => {
     let id = messages.length;       
     let newMessage = document.getElementById('messageInput').value;

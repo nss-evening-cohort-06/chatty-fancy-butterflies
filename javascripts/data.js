@@ -28,6 +28,7 @@ const getMessages = () => {
     return messages;
   };
 
+//updates the global message array 
 const updateMessages = (messageArray) => {
     messages = messageArray; 
 };
