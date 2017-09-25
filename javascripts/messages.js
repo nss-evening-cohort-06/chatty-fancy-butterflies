@@ -8,7 +8,7 @@ const users = require('./users');
 const events = require('./events');
 
 const getMessage = (messages) => {
-    let id = messages.length + 1;       
+    let id = messages.length;       
     let newMessage = document.getElementById('messageInput').value;
     let messageValue = {
         "id": id,
@@ -19,10 +19,11 @@ const getMessage = (messages) => {
     if (messages.length > 20) {
         document.getElementById("messagediv").innerHTML = "";
         dom.printPagination();
-        dom.writeToDom(pagination.loadData());
+        // dom.writeToDom(pagination.loadData());
     }
         messages.push(messageValue);
-        dom.writeToDom(messages);
+        pagination.lastPage();
+        // dom.writeToDom(messages);
         data.updateMessages(messages);
 };
 
