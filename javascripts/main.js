@@ -7,7 +7,7 @@ const clear = require("./clear.js");
 
 events.getNewMessage();
 
-data.initializer();
+data.initializer(); //fires off all data to populate the DOM
 events.toggleControls();
 events.deleteButton();
 events.userSelection();

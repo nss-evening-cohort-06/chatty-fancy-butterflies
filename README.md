@@ -77,13 +77,33 @@ Create multiple Browserify modules, following the Single Responsibility Principl
 ### Part 3
 ##### How to run the app and live demo
 >Package installs
-- you will need npm installed to run Browserify
+
+You will need to install some packages after pulling down the code:
 ```
-npm install grunt grunt-contrib-jshint matchdep grunt-contrib-watch grunt-browserify jshint-stylish --save-dev
+cd lib
+npm install
 ````
-- 
 
+Dependencies:
+```
+cd lib
+npm init
+npm install grunt grunt-contrib-jshint matchdep grunt-contrib-watch grunt-browserify jshint-stylish --save-dev
+npm install jquery bootstrap --save
+```
+- run `Grunt` by typing "grunt" while in the lib folder in the command line. This will compile the whole project down into a single `app.js` file.
 
+Emoji picker install:
+```
+npm install vanilla-emoji-picker --save
+```
+
+Timestamp install:
+```
+npm install moment --save
+```
+
+##### Live demo
 
 
 

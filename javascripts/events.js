@@ -158,6 +158,7 @@ const replaceMessage = () => {
     });
 };
 
+//replaces edited messages in modal on enter keypress and hides modal
 const replaceMessageOnEnter = () => {
     document.getElementById("message-text").addEventListener("keypress", (e) => {
         if (e.keyCode === 13) {

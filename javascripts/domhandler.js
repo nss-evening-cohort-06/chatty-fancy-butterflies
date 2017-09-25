@@ -34,7 +34,7 @@ const populateUserOptions = (userObj) => {
     userDropdownMenu.innerHTML = userListItems; 
 };
 
-
+//shows that a user is typing in the new message box
 const showTypingIndicatorRow = () => {
     let messageDiv = document.getElementById("messagediv");
     let messageDivChild = messageDiv.firstChild; 
@@ -49,6 +49,7 @@ const showTypingIndicatorRow = () => {
     typingIndicatorDiv.innerHTML += columnString;  
  };
 
+ //removes typing indicator when user stops typing
  const removeTypingIndicatorRow = () => {
     let typingIndicatorDiv = document.getElementById("typing-indicator-row"); 
     typingIndicatorDiv.remove();  
