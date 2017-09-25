@@ -21,6 +21,15 @@ const writeToDom = (messagesArr) => {
     });
     messageDiv.innerHTML = domString;
     messagesArr.reverse(); // returns messages array back to original configuration
+    checkForNoMessages(messagesArr); 
+};
+
+const checkForNoMessages = (messagesArr) => {
+    let messageDiv = document.getElementById("messagediv");
+    if (messagesArr.length === 0) {
+        messageDiv.innerText = "There are no messages to dispay, daddy";
+        messageDiv.style.textAlign = "center";
+    }
 };
 
 //takes the user object and populates the name in the user dropdown -- is called in data.intializer 
@@ -50,8 +59,10 @@ const showTypingIndicatorRow = () => {
  };
 
  const removeTypingIndicatorRow = () => {
-    let typingIndicatorDiv = document.getElementById("typing-indicator-row"); 
-    typingIndicatorDiv.remove();  
+    let typingIndicatorDiv = document.getElementById("typing-indicator-row");
+    if (typingIndicatorDiv) {
+        typingIndicatorDiv.remove(); 
+    }     
  };
 
 
