@@ -15,7 +15,7 @@ const getMessage = (e, messages) => {
         "userName": `${users.getCurrentUser()}`,
         "createdDate": timeStamp()
     };
-    messages.push(messageValue);
+    messages.unshift(messageValue);
     dom.writeToDom(messages);
     data.updateMessages(messages);
 };

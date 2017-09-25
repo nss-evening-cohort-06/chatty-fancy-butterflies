@@ -5,6 +5,7 @@ const data = require('./data');
 const dom = require('./domhandler');
 const users = require('./users');
 
+
 const getNewMessage = () => {
     let messageInput = document.getElementById('messageInput');
     messageInput.addEventListener('keypress', (e) => {
@@ -33,12 +34,16 @@ const makeTextDarker = (event) => {
     }
 };
 
-const makeTextBigger = (event) => {
-    if (event.target.checked === true) {
-        event.target.parentNode.parentNode.nextElementSibling.classList.add("makeTextBig");
-    } else if (event.target.checked === false) {
-        event.target.parentNode.parentNode.nextElementSibling.classList.remove("makeTextBig");
-    }
+const makeTextBigger = () => {    
+    const messageDiv = document.getElementById("messagediv");
+    document.getElementById("make-bigger-checkbox").addEventListener("change", (e) => {
+        if (e.target.checked) {
+            messageDiv.classList.add("makeTextBig"); //potentially add the picsBig class to the images 
+        } 
+        else if (!e.target.checked) {
+            messageDiv.classList.remove("makeTextBig");
+        }
+    });
 };
 
 const toggleControls = () => {
@@ -83,7 +88,7 @@ const userSelection = () => {
 //fires when a user is typing in the textbox and populates message div with a typing indicator
 const typingIndicator = () => {
     let messageInput = document.getElementById('messageInput');
-    let timer = 500; //in ms - how long the indicator will remain after the last keystroke
+    let timer = 1000; //in ms - how long the indicator will remain after the last keystroke
     messageInput.addEventListener('keydown', (e) =>{
         if (e.key !=="Enter"){ //indicator does not appear when enter is pressed 
             let typingIndicator = document.getElementById("typing-indicator-row");
@@ -112,7 +117,7 @@ const delay = (function() {
 		clearTimeout(timer[key]);
 		timer[key] = setTimeout(callback, ms);
 	};
-})();
+})(); 
 
 
 
@@ -150,11 +155,54 @@ const replaceMessage = () => {
     });
 };
 
+
+/******************************
+ Color pickers 
+ ******************************/
+
+
+const backgroundColor = () => {
+    let messageDiv = document.getElementById('messagediv');
+    let body = document.getElementById('body');
+    
+    $('#message-div-color-picker').colorpicker().on('changeColor', function(e) {
+        e.target.style.background = e.color.toString('rgba');
+        e.target.style.color = "#eeeade"; 
+        messageDiv.style.background = e.color.toString('rgba');
+    });
+    $('#body-color-picker').colorpicker().on('changeColor', function(e) {
+        e.target.style.background = e.color.toString('rgba');
+        e.target.style.color = "#eeeade"; 
+        body.style.background = e.color.toString('rgba');
+    });
+
+    $('#text-color-picker').colorpicker().on('changeColor', function(e) {
+        e.target.style.background = e.color.toString('rgba');
+        e.target.style.color = "#eeeade"; 
+        messageDiv.style.color = e.color.toString('rgba');
+    });
+
+    $('#reset-colors').on('click', (e) => {
+        $('#message-div-color-picker').removeAttr("style");
+        $('#body-color-picker').removeAttr("style");
+        $('#text-color-picker').removeAttr("style");
+        messageDiv.removeAttribute("style"); 
+        body.removeAttribute("style"); 
+        messageDiv.removeAttribute("style"); 
+    });
+};
+
+
+
+
+
+
 module.exports = {
     getNewMessage, 
-    toggleControls, 
+    makeTextBigger, 
     deleteButton,
     userSelection,
     editMessage,
-    typingIndicator
+    typingIndicator,
+    backgroundColor
 };

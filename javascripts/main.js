@@ -8,10 +8,11 @@ const clear = require("./clear.js");
 events.getNewMessage();
 
 data.initializer();
-events.toggleControls();
+events.makeTextBigger();
 events.deleteButton();
 events.userSelection();
 clear.addClearFxn();
 events.deleteButton();
 events.editMessage();
 events.typingIndicator(); 
+events.backgroundColor(); 
