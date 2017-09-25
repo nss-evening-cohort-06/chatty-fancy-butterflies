@@ -6,7 +6,7 @@ const users = require('./users.js');
 const writeToDom = (messagesArr) => {
     let messageDiv = document.getElementById("messagediv");
     let domString = "";
-    messagesArr.reverse().forEach((message) => { // messages array reversed for presenting most recent post at top of page
+        messagesArr.forEach((message) => { 
         if(!message.userName) {message.userName = "Mystery Daddy";}
         let index = users.getUsers().names.indexOf(`${message.userName}`);
         let profileImage = "./images/profile_pics/p_" + `${index}` + ".jpg";
@@ -18,9 +18,8 @@ const writeToDom = (messagesArr) => {
                 <div class="message-btn col-md-2 col-sm-3 col-xs-3"><span class="delete-btn glyphicon glyphicon-trash" id="delete-btn-${message.id}"></span>&nbsp&nbsp<span class="edit-btn glyphicon glyphicon-pencil" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" id="edit-btn-${message.id}"></span></div>
                 <!--<div class="message-btn col-md-2"></div>-->
             </div>`;
-    });
+        });
     messageDiv.innerHTML = domString;
-    messagesArr.reverse(); // returns messages array back to original configuration
     checkForNoMessages(messagesArr); 
 };
 
@@ -38,7 +37,9 @@ const populateUserOptions = (userObj) => {
     let userDropdownMenu = document.getElementById("user-dropdown-menu");
     let userListItems = "";
     users.forEach((name) => {
-        userListItems += `<li id="${name}"><a href=#>${name}</a></li>`;
+        if (name !== "Mystery Daddy") {
+            userListItems += `<li id="${name}"><a href=#>${name}</a></li>`;
+        }         
     });
     userDropdownMenu.innerHTML = userListItems; 
 };
@@ -48,7 +49,6 @@ const showTypingIndicatorRow = () => {
     let messageDiv = document.getElementById("messagediv");
     let messageDivChild = messageDiv.firstChild; 
     let typingIndicatorDiv = document.createElement("div");
-    //messageDiv.appendChild(typingIndicatorDiv); //need to decide if we want the indicator at the top or bottom of the message div
     messageDiv.insertBefore(typingIndicatorDiv, messageDivChild);
     typingIndicatorDiv.setAttribute("id", "typing-indicator-row");
     typingIndicatorDiv.classList.add("row");
