@@ -11,10 +11,11 @@ const getNewMessage = () => {
         if (e.keyCode === 13) {
             e.preventDefault();
             if(document.getElementById("messageInput").value === "") {
-                // do noting
+                // do nothing
             } else {
             getMessage(e, data.getMessages());
             document.getElementById("messageInput").value = "";
+            document.getElementById('btn-clear').disabled = false;
             }
         }  
     });    
