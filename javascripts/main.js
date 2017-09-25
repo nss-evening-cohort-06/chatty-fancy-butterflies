@@ -4,6 +4,7 @@ const data = require("./data");
 const events = require("./events.js");
 const clear = require("./clear.js");
 
+
 events.getNewMessage();
 
 data.initializer();
@@ -13,5 +14,9 @@ events.userSelection();
 clear.addClearFxn();
 events.deleteButton();
 events.editMessage();
+<<<<<<< HEAD
 events.typingIndicator(); 
 events.backgroundColor(); 
+=======
+events.typingIndicator(); 
+>>>>>>> master
