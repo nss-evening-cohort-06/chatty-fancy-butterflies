@@ -5,6 +5,7 @@ const data = require('./data');
 const dom = require('./domhandler');
 const users = require('./users');
 
+//fires off the function that grabs the value of the message input in the navbar when enter is pressed and clears the input 
 const getNewMessage = () => {
     let messageInput = document.getElementById('messageInput');
     messageInput.addEventListener('keypress', (e) => {
@@ -21,6 +22,7 @@ const getNewMessage = () => {
     });    
 };
 
+//makes the background color dark when the corresponding checkbox is clicked
 const makeTextDarker = (event) => {
     if (event.target.checked === true) {
         event.target.parentNode.parentNode.nextElementSibling.classList.remove("messages");
@@ -34,6 +36,7 @@ const makeTextDarker = (event) => {
     }
 };
 
+//makes the messages in the message container bigger when the corresponding checkbox is clicked
 const makeTextBigger = (event) => {
     if (event.target.checked === true) {
         event.target.parentNode.parentNode.nextElementSibling.classList.add("makeTextBig");
@@ -42,6 +45,7 @@ const makeTextBigger = (event) => {
     }
 };
 
+//reverses checkbox styling
 const toggleControls = () => {
     document.getElementById("selectordiv").addEventListener("change", (event)=> {
         if (event.target.id === "dark") {
@@ -52,6 +56,7 @@ const toggleControls = () => {
     });
 };
 
+//deletes only the message containing the specific delete button
 const deleteButton = () => {
     document.getElementById("messagediv").addEventListener("click", (event) => {
         if (event.target.classList.contains("delete-btn")) {
@@ -133,9 +138,11 @@ const editMessage = () => {
                 });
         }
     replaceMessage();
+    replaceMessageOnEnter();
     });
 };
 
+//shows edit window to edit message
 const replaceMessage = () => {
     document.getElementById("edit-message").addEventListener("click", () => {
         let messageToEdit = document.getElementById("message-text").value;
@@ -148,6 +155,24 @@ const replaceMessage = () => {
             });
         dom.writeToDom(messages);
         data.updateMessages(messages);
+    });
+};
+
+const replaceMessageOnEnter = () => {
+    document.getElementById("message-text").addEventListener("keypress", (e) => {
+        if (e.keyCode === 13) {
+        let messageToEdit = document.getElementById("message-text").value;
+        let idToEdit = parseInt(document.getElementById("editid").innerHTML);
+        let messages = data.getMessages();
+            messages.forEach((message) => {
+                if (idToEdit === message.id) {
+                  message.text = messageToEdit;  
+                }
+            });
+            dom.writeToDom(messages);
+            data.updateMessages(messages);
+            $('.modal').modal('hide');
+        }
     });
 };
 
