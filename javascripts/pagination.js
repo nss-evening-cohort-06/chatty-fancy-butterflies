@@ -48,7 +48,7 @@ const loadDomList = () => {
     let end = begin + numberOfMessagesPerPage;
     pageList = list.slice(begin, end);
     dom.writeToDom(pageList); //sends the range of messages that are to be displayed to the domHandler
-    if (list.length > 20) {
+    if (list.length > numberOfMessagesPerPage) { //changed from hardcoded 20
         check(); // determines the disabled states of the pagination buttons
     }
 };
@@ -66,5 +66,6 @@ module.exports = {
     firstPage,
     lastPage,
     loadDomList,
-    loadData
+    loadData,
+    numberOfMessagesPerPage
 };

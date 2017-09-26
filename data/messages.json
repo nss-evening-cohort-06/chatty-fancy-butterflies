@@ -1,33 +1,33 @@
 {
 	"messages": [
 		{
-			"id": 1,
+			"id": 0,
 			"text": "Oh yeah, you really told him, didn't you?",
             "userName": "Xavier",
             "createdDate": "Fri, Sep 22, 2017 8:12 PM"
 
 		},
 		{
-			"id": 2,
+			"id": 1,
 			"text": "We can't. I'm your boss.",
             "userName": "Joanna",
             "createdDate": "Fri, Sep 22, 2017 8:15 PM" 
         },
         {
-			"id": 3,
+			"id": 2,
 			"text": "If you leave now, you get nothing.",
             "userName": "Gunter",
 
             "createdDate": "Fri, Sep 22, 2017 8:30 PM" 
         },
         {
-			"id": 4,
+			"id": 3,
 			"text": "There's someone in the house!",
             "userName": "Iveta",
             "createdDate": "Fri, Sep 22, 2017 9:10 PM" 
         },
         {
-			"id": 5,
+			"id": 4,
 			"text": "No! I'm tired of doing what you say.",
             "userName": "Xavier",
             "createdDate": "Fri, Sep 22, 2017 9:11 PM" 

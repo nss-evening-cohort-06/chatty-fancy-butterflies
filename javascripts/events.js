@@ -1,27 +1,22 @@
 'use strict';
 
-const getMessage = require('./messages');
-const data = require('./data');
+const messagesFile = require('./messages');
 const dom = require('./domhandler');
 const users = require('./users');
 const pagination = require('./pagination');
+const data = require('./data'); 
 
 
 //fires off the function that grabs the value of the message input in the navbar when enter is pressed and clears the input 
 const getNewMessage = () => {
     let messageInput = document.getElementById('messageInput');
+    let messageArr = data.getMessages(); 
     messageInput.addEventListener('keypress', (e) => {
-        if (e.keyCode === 13) {
+        if (e.keyCode === 13 && messageInput.value !== "") {
             e.preventDefault();
             document.getElementById('btn-clear').disabled = false;
-            getMessage(data.getMessages());
-            document.getElementById("messageInput").value = "";    
-            if(document.getElementById("messageInput").value === "") {
-                // do nothing
-            } else {
-            getMessage(e, data.getMessages());
-            document.getElementById("messageInput").value = "";            
-            }
+            messagesFile.createNewMessage(messageInput.value, messageArr);
+            document.getElementById("messageInput").value = "";   
         }  
     });    
 };

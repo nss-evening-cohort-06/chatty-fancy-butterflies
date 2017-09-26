@@ -7,25 +7,34 @@ const dom = require('./domhandler');
 const users = require('./users');
 const events = require('./events');
 
-//creates new message object and calls writeToDom to print to the page       
-const getMessage = (messages) => {
-    let id = messages.length;       
-    let newMessage = document.getElementById('messageInput').value;
+let messageId = 0; 
+
+const setMessageId = (num) => {
+    messageId = num; 
+};
+
+//creates new message object and calls writeToDom to print to the page  
+//takes the messages array which it then adds messageValue to     
+const createNewMessage = (newMessageValue, messages) => {    
+    let newMessage = newMessageValue; 
     let messageValue = {
-        "id": id,
+        "id": messageId,
         "text": `${newMessage}`,
         "userName": `${users.getCurrentUser()}`,
         "createdDate": timeStamp()
     };
-    if (messages.length > 20) {
-        document.getElementById("messagediv").innerHTML = "";
-        dom.printPagination();
-        // dom.writeToDom(pagination.loadData());
+    if (messages.length > pagination.numberOfMessagesPerPage) { ///CHANGED from HARDCODED 20 
+        //document.getElementById("messagediv").innerHTML = ""; //removed this - should be handled in printToDom
+        dom.printPagination(); 
     }
         messages.unshift(messageValue);
+        messageId ++; 
         pagination.firstPage();
         data.updateMessages(messages);
 
 };
 
-module.exports = getMessage;
+module.exports = {
+    createNewMessage,
+    setMessageId
+};
