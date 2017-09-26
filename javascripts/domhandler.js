@@ -27,7 +27,6 @@ const checkForNoMessages = (messagesArr) => {
     let messageDiv = document.getElementById("messagediv");
     if (messagesArr.length === 0) {
         messageDiv.innerText = "There are no messages to dispay, daddy";
-        messageDiv.style.textAlign = "center";
     }
 };
 
@@ -45,6 +44,22 @@ const populateUserOptions = (userObj) => {
 };
 
 
+//adds pagination buttons to the dom
+const printPagination = () => {
+    let paginationDivTop = document.getElementById('paginationDivTop');
+    let domString =
+        `<div class='row'>
+            <div class='text-center'> 
+            <button type="button" class="btn btn-info btn-sm" id="first">first</button>
+            <button type="button" class="btn btn-info btn-sm" id="next" class='btn btn-secondary btn-sm'>Next</button>
+            <button type="button" class="btn btn-info btn-sm" id="previous">Previous</button>
+            <button type="button" class="btn btn-info btn-sm" id="last">Last</button>
+            </div>
+        </div>`;
+    paginationDivTop.innerHTML = domString;    
+};
+
+//shows that a user is typing in the new message box
 const showTypingIndicatorRow = () => {
     let messageDiv = document.getElementById("messagediv");
     let messageDivChild = messageDiv.firstChild; 
@@ -58,6 +73,7 @@ const showTypingIndicatorRow = () => {
     typingIndicatorDiv.innerHTML += columnString;  
  };
 
+ //removes typing indicator when user stops typing
  const removeTypingIndicatorRow = () => {
     let typingIndicatorDiv = document.getElementById("typing-indicator-row");
     if (typingIndicatorDiv) {
@@ -69,6 +85,7 @@ const showTypingIndicatorRow = () => {
 module.exports = {
     writeToDom,
     populateUserOptions,
+    printPagination,
     showTypingIndicatorRow,
     removeTypingIndicatorRow
 };

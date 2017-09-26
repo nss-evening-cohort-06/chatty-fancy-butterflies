@@ -1,13 +1,15 @@
 'use strict';
 
 const timeStamp = require('./timeStamp.js');
-
+const pagination = require('./pagination');
 const data = require('./data');
 const dom = require('./domhandler');
 const users = require('./users');
+const events = require('./events');
 
-const getMessage = (e, messages) => {
-    let id = messages.length + 1;       
+//creates new message object and calls writeToDom to print to the page       
+const getMessage = (messages) => {
+    let id = messages.length;       
     let newMessage = document.getElementById('messageInput').value;
     let messageValue = {
         "id": id,
@@ -15,9 +17,15 @@ const getMessage = (e, messages) => {
         "userName": `${users.getCurrentUser()}`,
         "createdDate": timeStamp()
     };
-    messages.unshift(messageValue);
-    dom.writeToDom(messages);
-    data.updateMessages(messages);
+    if (messages.length > 20) {
+        document.getElementById("messagediv").innerHTML = "";
+        dom.printPagination();
+        // dom.writeToDom(pagination.loadData());
+    }
+        messages.unshift(messageValue);
+        pagination.firstPage();
+        data.updateMessages(messages);
+
 };
 
 module.exports = getMessage;

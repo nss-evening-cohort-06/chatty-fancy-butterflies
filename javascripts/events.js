@@ -4,23 +4,29 @@ const getMessage = require('./messages');
 const data = require('./data');
 const dom = require('./domhandler');
 const users = require('./users');
+const pagination = require('./pagination');
 
 
+//fires off the function that grabs the value of the message input in the navbar when enter is pressed and clears the input 
 const getNewMessage = () => {
     let messageInput = document.getElementById('messageInput');
     messageInput.addEventListener('keypress', (e) => {
         if (e.keyCode === 13) {
             e.preventDefault();
+            document.getElementById('btn-clear').disabled = false;
+            getMessage(data.getMessages());
+            document.getElementById("messageInput").value = "";    
             if(document.getElementById("messageInput").value === "") {
-                // do noting
+                // do nothing
             } else {
             getMessage(e, data.getMessages());
-            document.getElementById("messageInput").value = "";
+            document.getElementById("messageInput").value = "";            
             }
         }  
     });    
 };
 
+//makes the background color dark when the corresponding checkbox is clicked
 const makeTextDarker = (event) => {
     if (event.target.checked === true) {
         event.target.parentNode.parentNode.nextElementSibling.classList.remove("messages");
@@ -34,6 +40,7 @@ const makeTextDarker = (event) => {
     }
 };
 
+//makes the messages in the message container bigger when the corresponding checkbox is clicked
 const makeTextBigger = () => {    
     const messageDiv = document.getElementById("messagediv");
     document.getElementById("make-bigger-checkbox").addEventListener("change", (e) => {
@@ -46,6 +53,7 @@ const makeTextBigger = () => {
     });
 };
 
+//reverses checkbox styling
 const toggleControls = () => {
     document.getElementById("selectordiv").addEventListener("change", (event)=> {
         if (event.target.id === "dark") {
@@ -56,6 +64,7 @@ const toggleControls = () => {
     });
 };
 
+//deletes only the message containing the specific delete button
 const deleteButton = () => {
     document.getElementById("messagediv").addEventListener("click", (event) => {
         if (event.target.classList.contains("delete-btn")) {
@@ -137,9 +146,11 @@ const editMessage = () => {
                 });
         }
     replaceMessage();
+    replaceMessageOnEnter();
     });
 };
 
+//shows edit window to edit message
 const replaceMessage = () => {
     document.getElementById("edit-message").addEventListener("click", () => {
         let messageToEdit = document.getElementById("message-text").value;
@@ -152,6 +163,41 @@ const replaceMessage = () => {
             });
         dom.writeToDom(messages);
         data.updateMessages(messages);
+    });
+};
+
+//pagination button events
+const changeMessagePage = () => {
+    document.body.addEventListener('click', (e) => {
+        if (e.target.id === "first"){
+            pagination.firstPage();
+        } else if (e.target.id === "next"){
+            pagination.nextPage();
+        } else if (e.target.id === "previous"){
+            pagination.previousPage();
+        } else if (e.target.id === "last"){
+            pagination.lastPage();
+        }
+    });
+};
+
+
+//replaces edited messages in modal on enter keypress and hides modal
+const replaceMessageOnEnter = () => {
+    document.getElementById("message-text").addEventListener("keypress", (e) => {
+        if (e.keyCode === 13) {
+        let messageToEdit = document.getElementById("message-text").value;
+        let idToEdit = parseInt(document.getElementById("editid").innerHTML);
+        let messages = data.getMessages();
+            messages.forEach((message) => {
+                if (idToEdit === message.id) {
+                  message.text = messageToEdit;  
+                }
+            });
+            dom.writeToDom(messages);
+            data.updateMessages(messages);
+            $('.modal').modal('hide');
+        }
     });
 };
 
@@ -203,6 +249,7 @@ module.exports = {
     deleteButton,
     userSelection,
     editMessage,
+    changeMessagePage,
     typingIndicator,
     backgroundColor
 };

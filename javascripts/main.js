@@ -14,5 +14,7 @@ events.userSelection();
 clear.addClearFxn();
 events.deleteButton();
 events.editMessage();
-events.typingIndicator(); 
+events.changeMessagePage();
+events.typingIndicator();  
 events.backgroundColor(); 
+
