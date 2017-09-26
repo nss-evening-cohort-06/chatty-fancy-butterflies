@@ -48,11 +48,12 @@ const loadDomList = () => {
     let end = begin + numberOfMessagesPerPage;
     pageList = list.slice(begin, end);
     dom.writeToDom(pageList); //sends the range of messages that are to be displayed to the domHandler
-    check();         // determines the disabled states of the pagination buttons
+    if (list.length > 20) {
+        check(); // determines the disabled states of the pagination buttons
+    }
 };
 
 const check = () => {
-    console.log('"check()" func entered');
     document.getElementById("next").disabled = currentPage === numberOfPages ? true : false;
     document.getElementById("previous").disabled = currentPage === 1 ? true : false;
     document.getElementById("first").disabled = currentPage === 1 ? true : false;

@@ -17,6 +17,7 @@
     "matchdep": "^2.0.0"
   },
   "dependencies": {
+    "bootstrap-colorpicker": "^2.5.2",
     "moment": "^2.18.1",
     "vanilla-emoji-picker": "^0.2.0"
   }

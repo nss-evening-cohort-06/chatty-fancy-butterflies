@@ -7,13 +7,14 @@ const clear = require("./clear.js");
 
 events.getNewMessage();
 
-data.initializer(); //fires off all data to populate the DOM
-events.toggleControls();
+data.initializer();
+events.makeTextBigger();
 events.deleteButton();
 events.userSelection();
 clear.addClearFxn();
 events.deleteButton();
 events.editMessage();
 events.changeMessagePage();
-events.typingIndicator(); 
-events.typingIndicator(); 
+events.typingIndicator();  
+events.backgroundColor(); 
+

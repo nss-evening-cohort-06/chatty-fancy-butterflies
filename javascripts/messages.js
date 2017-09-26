@@ -22,10 +22,10 @@ const getMessage = (messages) => {
         dom.printPagination();
         // dom.writeToDom(pagination.loadData());
     }
-        messages.push(messageValue);
-        pagination.lastPage();
-        // dom.writeToDom(messages);
+        messages.unshift(messageValue);
+        pagination.firstPage();
         data.updateMessages(messages);
+
 };
 
 module.exports = getMessage;
