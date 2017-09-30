@@ -5,7 +5,6 @@ const pagination = require('./pagination');
 const data = require('./data');
 const dom = require('./domhandler');
 const users = require('./users');
-const events = require('./events');
 
 let messageId = 0; 
 
@@ -15,8 +14,8 @@ const setMessageId = (num) => {
 
 //creates new message object and calls writeToDom to print to the page  
 //takes the messages array which it then adds messageValue to     
-const createNewMessage = (newMessageValue, messages) => {    
-    let newMessage = newMessageValue; 
+const createNewMessage = (newMessage) => {
+    let messages = data.getCurrentMessages();     
     let messageValue = {
         "id": messageId,
         "text": `${newMessage}`,

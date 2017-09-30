@@ -10,7 +10,7 @@ let numberOfMessagesPerPage = 20;
 let numberOfPages = 1; 
 
 const loadData = () => {
-    list = data.getMessages();
+    list = data.getCurrentMessages();
 };
 
 const setPageNumbers = () => {

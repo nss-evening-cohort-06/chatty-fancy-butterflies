@@ -10,29 +10,17 @@ const data = require('./data');
 //fires off the function that grabs the value of the message input in the navbar when enter is pressed and clears the input 
 const getNewMessage = () => {
     let messageInput = document.getElementById('messageInput');
-    let messageArr = data.getMessages(); 
     messageInput.addEventListener('keypress', (e) => {
-        if (e.keyCode === 13 && messageInput.value !== "") {
+        if (e.keyCode === 13) {
             e.preventDefault();
+        if (messageInput.value !== "") {
             document.getElementById('btn-clear').disabled = false;
-            messagesFile.createNewMessage(messageInput.value, messageArr);
+            messagesFile.createNewMessage(messageInput.value);
             document.getElementById("messageInput").value = "";   
-        }  
+        } 
+        }
+ 
     });    
-};
-
-//makes the background color dark when the corresponding checkbox is clicked
-const makeTextDarker = (event) => {
-    if (event.target.checked === true) {
-        event.target.parentNode.parentNode.nextElementSibling.classList.remove("messages");
-        event.target.parentNode.parentNode.nextElementSibling.classList.add("makeTextDark");
-        document.getElementById("body").classList.add("bodydarkplace");
-    } else if (event.target.checked === false) {
-        event.target.parentNode.parentNode.nextElementSibling.classList.remove("makeTextDark");
-        event.target.parentNode.parentNode.nextElementSibling.classList.add("messages");
-        document.getElementById("body").classList.remove("bodydarkplace");
-
-    }
 };
 
 //makes the messages in the message container bigger when the corresponding checkbox is clicked
@@ -41,30 +29,22 @@ const makeTextBigger = () => {
     document.getElementById("make-bigger-checkbox").addEventListener("change", (e) => {
         if (e.target.checked) {
             messageDiv.classList.add("makeTextBig"); //potentially add the picsBig class to the images 
+            $(".message-text > img").switchClass("pics", "picsBig");
         } 
         else if (!e.target.checked) {
             messageDiv.classList.remove("makeTextBig");
+            $(".message-text > .img").switchClass("picsBig", "pics");
         }
     });
 };
 
-//reverses checkbox styling
-const toggleControls = () => {
-    document.getElementById("selectordiv").addEventListener("change", (event)=> {
-        if (event.target.id === "dark") {
-            makeTextDarker(event);
-        } else if (event.target.id === "bigger") {
-            makeTextBigger(event);
-        }
-    });
-};
 
 //deletes only the message containing the specific delete button
 const deleteButton = () => {
     document.getElementById("messagediv").addEventListener("click", (event) => {
         if (event.target.classList.contains("delete-btn")) {
             let id = parseInt(event.target.id.split("-")[2]);
-            let messages = data.getMessages();
+            let messages = data.getCurrentMessages();
                 messages.forEach((message, index) => {
                     if (id === message.id) {
                         messages.splice(index, 1);
@@ -131,7 +111,7 @@ const editMessage = () => {
         if (event.target.classList.contains("edit-btn")) {
             let showmessage;
             let id = parseInt(event.target.id.split("-")[2]);
-            let messages = data.getMessages();
+            let messages = data.getCurrentMessages();
                 messages.forEach((message) => {
                     if (id === message.id) {
                         showmessage = message.text;
@@ -150,7 +130,7 @@ const replaceMessage = () => {
     document.getElementById("edit-message").addEventListener("click", () => {
         let messageToEdit = document.getElementById("message-text").value;
         let idToEdit = parseInt(document.getElementById("editid").innerHTML);
-        let messages = data.getMessages();
+        let messages = data.getCurrentMessages();
             messages.forEach((message) => {
                 if (idToEdit === message.id) {
                   message.text = messageToEdit;  
@@ -183,7 +163,7 @@ const replaceMessageOnEnter = () => {
         if (e.keyCode === 13) {
         let messageToEdit = document.getElementById("message-text").value;
         let idToEdit = parseInt(document.getElementById("editid").innerHTML);
-        let messages = data.getMessages();
+        let messages = data.getCurrentMessages();
             messages.forEach((message) => {
                 if (idToEdit === message.id) {
                   message.text = messageToEdit;  

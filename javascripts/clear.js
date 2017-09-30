@@ -8,7 +8,7 @@ const addClearFxn = () => {
 	const clearBtnFxn = document.getElementById("btn-clear");
 	clearBtnFxn.addEventListener('click', function() {
 		data.updateMessages([]);
-		dom.writeToDom(data.getMessages());
+		dom.writeToDom(data.getCurrentMessages());
 		clearBtnFxn.disabled = true;		
 	});
 };

@@ -3,9 +3,10 @@
 const data = require("./data"); 
 const events = require("./events.js");
 const clear = require("./clear.js");
+const messageFile = require("./messages.js");
 
 
-events.getNewMessage();
+
 
 data.initializer();
 events.makeTextBigger();
@@ -17,4 +18,6 @@ events.editMessage();
 events.changeMessagePage();
 events.typingIndicator();  
 events.backgroundColor(); 
+events.getNewMessage();
+
 
